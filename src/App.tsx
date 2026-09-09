@@ -516,47 +516,83 @@ const STATS = [
   },
 ];
 
-const TIMELINE = [
+type TimelinePhase = {
+  phase: string;
+  title: string;
+  date: string;
+  desc: string;
+  icon: string;
+  color: string;
+  accent: string;
+  textAccent: string;
+  isWarning?: boolean;
+};
+
+const TECH_TIMELINE: TimelinePhase[] = [
   {
     phase: "01",
-    title: "Applications Open",
-    date: "Sep 15 – Oct 05, 2026",
-    desc: "Fill out the recruitment form online. Tell us about yourself, your interests, and any projects you've worked on. No GPA cutoff — we hire on curiosity.",
-    icon: "edit_note",
-    color: "bg-background-light",
-    accent: "text-primary",
-    textAccent: "text-slate-900",
-  },
-  {
-    phase: "02",
-    title: "Orientation & Info Session",
-    date: "Oct 08, 2026",
-    desc: "Attend our in-person orientation session. Meet current members, tour the lab, ask questions, and understand what each domain works on day-to-day.",
-    icon: "groups",
-    color: "bg-primary",
-    accent: "text-white",
-    textAccent: "text-white",
-  },
-  {
-    phase: "03",
-    title: "Technical Tasks",
-    date: "Oct 10 – Oct 17, 2026",
-    desc: "Complete a short domain-specific task designed to be educational, not eliminatory. There's no single right answer — we're looking for how you think.",
+    title: "Online Quiz Round",
+    date: "TBA",
+    desc: "Core CS fundamentals",
     icon: "terminal",
     color: "bg-background-light",
     accent: "text-primary",
     textAccent: "text-slate-900",
   },
   {
-    phase: "04",
-    title: "Induction",
-    date: "Oct 22, 2026",
-    desc: "Successful candidates are welcomed into CODEX ITER. You'll be matched with a mentor, onboarded to an active project, and join the family.",
-    icon: "verified",
-    color: "bg-slate-900",
+    phase: "02",
+    title: "Offline Coding Round",
+    date: "TBA",
+    desc: "Algorithmic problem solving",
+    icon: "code",
+    color: "bg-primary",
     accent: "text-white",
     textAccent: "text-white",
   },
+  {
+    phase: "03",
+    title: "Interview Round",
+    date: "TBA",
+    desc: "Technical and HR discussion",
+    icon: "groups",
+    color: "bg-background-light",
+    accent: "text-primary",
+    textAccent: "text-slate-900",
+  }
+];
+
+const NON_TECH_TIMELINE: TimelinePhase[] = [
+  {
+    phase: "00",
+    title: "Portfolio Submission",
+    date: "TBA",
+    desc: "Showcase your past work and creativity.",
+    isWarning: true,
+    icon: "palette",
+    color: "bg-background-light",
+    accent: "text-primary",
+    textAccent: "text-slate-900",
+  },
+  {
+    phase: "01",
+    title: "Quiz Round",
+    date: "TBA",
+    desc: "Aptitude and domain knowledge",
+    icon: "edit_note",
+    color: "bg-primary",
+    accent: "text-white",
+    textAccent: "text-white",
+  },
+  {
+    phase: "02",
+    title: "Interview Round",
+    date: "TBA",
+    desc: "Portfolio review and HR discussion",
+    icon: "groups",
+    color: "bg-background-light",
+    accent: "text-primary",
+    textAccent: "text-slate-900",
+  }
 ];
 
 const FAQS = [
@@ -645,6 +681,7 @@ function NotepadViewer() {
 
 // ─── Main App Component ────────────────────────────────────────────────────────
 export default function App() {
+  const [activeTrack, setActiveTrack] = useState<'tech' | 'non-tech'>('tech');
   const HERO_TITLE = "CODEX";
   const HERO_SUB1 = "START";
   const HERO_SUB2 = "2026";
@@ -997,12 +1034,28 @@ export default function App() {
             </div>
           </ScrollReveal>
 
+          {/* Neo-Brutalist Toggle Tabs */}
+          <div className="flex flex-col sm:flex-row gap-6 mb-12">
+            <button 
+              onClick={() => setActiveTrack('tech')}
+              className={`flex-1 font-mono text-xl font-bold uppercase tracking-widest border-4 border-slate-900 py-4 px-6 transition-all ${activeTrack === 'tech' ? 'bg-[#F53D8A] text-white translate-x-1 translate-y-1 shadow-none' : 'bg-[#C4DFED] text-slate-900 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]'}`}
+            >
+              [ TECH_TRACK ]
+            </button>
+            <button 
+              onClick={() => setActiveTrack('non-tech')}
+              className={`flex-1 font-mono text-xl font-bold uppercase tracking-widest border-4 border-slate-900 py-4 px-6 transition-all ${activeTrack === 'non-tech' ? 'bg-[#F53D8A] text-white translate-x-1 translate-y-1 shadow-none' : 'bg-[#C4DFED] text-slate-900 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]'}`}
+            >
+              [ NON_TECH_TRACK ]
+            </button>
+          </div>
+
           <div className="relative">
             {/* Vertical connector */}
             <div className="hidden md:block absolute left-[calc(2.5rem_-_2px)] top-0 bottom-0 w-1 bg-slate-900" />
 
-            <StaggerContainer className="space-y-8">
-              {TIMELINE.map((phase, i) => (
+            <StaggerContainer className="space-y-8" key={activeTrack}>
+              {(activeTrack === 'tech' ? TECH_TIMELINE : NON_TECH_TIMELINE).map((phase, i) => (
                 <StaggerItem key={i}>
                   <div className="flex gap-6 md:gap-10 items-start">
                     {/* Phase badge */}
@@ -1044,6 +1097,11 @@ export default function App() {
                           {phase.date}
                         </span>
                       </div>
+                      {phase.isWarning && (
+                        <div className="mb-4 mt-2">
+                          <span className="text-xs bg-[#F53D8A] text-white px-2 py-1 font-mono border border-black inline-block shadow-[2px_2px_0px_rgba(0,0,0,1)]">REQUIRED FOR DESIGNERS & VIDEO EDITORS</span>
+                        </div>
+                      )}
                       <p className="text-slate-700 font-medium leading-relaxed text-sm">
                         {phase.desc}
                       </p>
