@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+**/.env
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# SpideyTracker specific
+SpideyTracker/spideytracker.net/uploads/
+SpideyTracker/deploy/init/*.sql
+SpideyTracker/spidey-tracker-deploy.tar.gz
+SpideyTracker/deploy-pkg/
+SpideyTracker/spideytracker.net/images
+SpideyTracker/*.bat
+SpideyTracker/deploy/export-sql.cjs
+
+# Vite
+*.local

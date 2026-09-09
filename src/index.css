@@ -1,0 +1,146 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+  
+  /* Tracker Custom Variables */
+  --font-pixel: "Press Start 2P", ui-monospace, monospace;
+  --console-shell: #C4DFED;
+  --console-edge: oklch(0.22 0.06 250);
+  --map-base: oklch(0.34 0.08 245);
+  --map-deep: oklch(0.24 0.07 252);
+  --hud-panel: oklch(0.17 0.055 250);
+  --hud-frame: oklch(0.11 0.035 252);
+  --hud-highlight: oklch(0.94 0.02 220);
+  --console-inset: oklch(0.3 0.065 234);
+  --shadow-pixel-sm: 0 3px 0 var(--hud-frame);
+}
+
+@theme inline {
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Grotesk', 'Courier New', monospace;
+
+  --color-primary: #F53D8A; /* Vibrant Magenta */
+  --color-background-light: #C4DFED; /* Dusty Light Blue */
+  --color-background-dark: #B3E5FC; /* Icy Blue */
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: #FCB6D1; /* Soft Rose */
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: 0rem;
+  --radius-md: 0rem;
+  --radius-lg: 0rem;
+  --radius-xl: 0rem;
+  --radius-2xl: 0rem;
+  --radius: 0rem;
+
+  --color-hud-panel: var(--hud-panel);
+  --color-hud-frame: var(--hud-frame);
+  --color-hud-highlight: var(--hud-highlight);
+  --color-console-inset: var(--console-inset);
+  --shadow-pixel-sm: var(--shadow-pixel-sm);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
+
+@keyframes radar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer utilities {
+  /* ─── Neo-brutalist shadow utilities ─── */
+  .brutalist-shadow {
+    box-shadow: 4px 4px 0px 0px #03045E;
+  }
+
+  .brutalist-shadow-sm {
+    box-shadow: 2px 2px 0px 0px #03045E;
+  }
+
+  .brutalist-shadow-hover:hover {
+    box-shadow: 8px 8px 0px 0px #03045E;
+    transform: translate(-2px, -2px);
+  }
+
+  /* ─── Dot-matrix grid background ─── */
+  .grid-pattern {
+    background-image: radial-gradient(#03045E 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  /* ─── Material Symbols Outlined ─── */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Smooth scroll ─── */
+  html {
+    scroll-behavior: smooth;
+  }
+}

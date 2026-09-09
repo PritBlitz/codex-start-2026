@@ -1,0 +1,558 @@
+{
+  "init": {
+    "general": {
+      "seo": {
+        "title": "CODEX Tracker",
+        "description": "Track CODEX's whereabouts through the official CODEX Tracker.",
+        "keywords": "CODEX, CODEX Tracker, CODEX sightings, map tracking",
+        "shareImage": "./images/shareImage/shareImage.jpg",
+        "ogTitle": "CODEX Tracker",
+        "ogDescription": "Track CODEX's whereabouts through the official CODEX Tracker.",
+        "twitterTitle": "CODEX Tracker",
+        "twitterDescription": "Track CODEX's whereabouts through the official CODEX Tracker."
+      },
+      "header": {
+        "sonyPicturesAriaLabel": "",
+        "sonyPicturesAlt": "",
+        "sonyAriaLabel": "",
+        "sonyAlt": ""
+      },
+      "mainUi": {
+        "log": "Log",
+        "webWatch": "Web Watch",
+        "reportSighting": "Report Sighting",
+        "video": "Video",
+        "legend": "?",
+        "soundOffAlt": "Disable Sound",
+        "soundOnAlt": "Enable Sound"
+      },
+      "legend": {
+        "title": "Legend",
+        "ariaLabel": "Map Legend",
+        "closeAriaLabel": "Close Legend",
+        "intro": "Interact with the map, view CODEX Sightings from all over the world. Here is a legend of all features. Have fun, and start tracking!",
+        "featuresAriaLabel": "Legend features",
+        "items": {
+          "confirmed": "Confirmed Sightings",
+          "reported": "Rumored Sightings",
+          "messageCenter": "Message Center",
+          "audio": "Sound Toggle",
+          "neighborhood": "Locate Your Neighborhood",
+          "globalMap": "Global Map"
+        }
+      },
+      "preMap": {},
+      "soundOptIn": {
+        "ariaLabel": "Sound Preferences",
+        "headline": "Welcome to CODEX Tracker.\nInteract with the map, view\nall over the world\nCODEX Sightings.",
+        "continueLabel": "Select your settings and start tracking",
+        "soundOnText": "Sound On",
+        "soundOffText": "Sound Off"
+      },
+      "tutorial": {
+        "autoCloseTimer": 7000
+      },
+      "inTrackerVideoPlayer": {
+        "ariaLabel": "Opening Video",
+        "unmuteAriaLabel": "Click to Unmute",
+        "unmuteText": "Click to Unmute",
+        "skipText": "Skip"
+      },
+      "startupVideo": {
+        "enabled": false,
+        "medium": "youtube",
+        "title": "Message from Ned",
+        "src": "https://www.youtube.com/watch?v=0ceb-6OoJw8",
+        "teaserSiteMode": {
+          "enabled": false,
+          "showSoundOptIn": true,
+          "hideSoundToggle": false,
+          "tickerMsg": "Stay Tuned",
+          "tickerBehavior": "scroll",
+          "replayButtonText": "Replay Video"
+        },
+        "teaserSiteModeWithVideo": {
+          "enabled": false,
+          "allowSoundOnPlay": true,
+          "tickerMsg": "Releasing Tomorrow",
+          "tickerBehavior": "scroll",
+          "ctaText": "Watch a message from our founder and CEO\nNed Leeds",
+          "playBtnText": "Play Video"
+        }
+      },
+      "frameUi": {
+        "trackerLogoAlt": "Tracker Logo",
+        "spideyFigureAriaLabel": "CODEX Model"
+      },
+      "languageToggle": {
+        "enabled": false,
+        "currentLanguage": {
+          "text": "EN"
+        },
+        "optionalLanguage": {
+          "text": "FR",
+          "url": "https://spidey.tracker.net"
+        }
+      },
+      "pushNotification": {
+        "enabled": false,
+        "messageText": "Enable exclusive notifications?",
+        "yesLabel": "Yes",
+        "noLabel": "No",
+        "enablingText": "Enabling...",
+        "enabledText": "Enabled"
+      },
+      "mainMenu": {
+        "ariaLabel": "Main Navigation Menu",
+        "closeAriaLabel": "Close Main Menu",
+        "closeText": "Close",
+        "navAriaLabel": "Main Navigation",
+        "eventsToast": "Events Coming Soon",
+        "items": {
+          "authLogin": {
+            "label": "Login / Register",
+            "show": true
+          },
+          "userPanel": {
+            "label": "User",
+            "show": false
+          },
+          "reportSightings": {
+            "label": "Report Sighting",
+            "show": true
+          },
+          "activityLog": {
+            "label": "Events Log",
+            "show": true
+          },
+          "webWatch": {
+            "label": "Web Watch",
+            "show": true
+          },
+          "videos": {
+            "label": "Video",
+            "show": false
+          },
+          "events": {
+            "label": "Events",
+            "show": false
+          },
+          "help": {
+            "label": "Help",
+            "show": true
+          },
+          "getTickets": {
+            "label": "Buy Tickets",
+            "show": false
+          },
+          "samsungDownloads": {
+            "label": "Exclusive Downloads",
+            "show": true,
+            "exclusive": true
+          }
+        }
+      },
+      "tracking": {
+        "allowVideoSectionTracking": true
+      },
+      "lightbox": {
+        "closeAriaLabel": "Close",
+        "closeText": "Close",
+        "singleImageAlt": "Lightbox content",
+        "singleIFrameTitle": "Buy Tickets",
+        "videoGalleryKicker": "Now Playing:",
+        "hideVideoListAriaLabel": "Hide video list",
+        "previousVideosAriaLabel": "Previous Video",
+        "nextVideosAriaLabel": "Next Video"
+      },
+      "samsungExclusives": {
+        "title": "Exclusive Downloads",
+        "closeAriaLabel": "Close Exclusive Downloads",
+        "closeText": "Close"
+      },
+      "activityLog": {
+        "title": "Events Log",
+        "closeAriaLabel": "Close Events Log",
+        "closeText": "Close",
+        "badgeTrailer": "Trailer",
+        "badgeReported": "Rumored",
+        "badgeEvent": "Event",
+        "badgeConfirmed": "Confirmed",
+        "sectionExplainer": {
+          "enabled": true,
+          "headerText": "Events Log Description",
+          "closeButtonText": "Close",
+          "bodyText": "Take a look—I built a real-time list of CODEX Sightings and Events to make sure you catch all the latest updates."
+        }
+      },
+      "webWatch": {
+        "panelAriaLabel": "Web Watch Panel",
+        "title": "Web Watch 1.0",
+        "closeAriaLabel": "Close Web Watch",
+        "closeText": "Close",
+        "previousArticleAriaLabel": "Previous Article",
+        "nextArticleAriaLabel": "Next Article",
+        "sectionExplainer": {
+          "enabled": true,
+          "headerText": "Web Watch Description",
+          "closeButtonText": "Close",
+          "bodyText": "Honestly, it's hard to keep track of all the bad guys Spidey takes on, so I've started a collection with all the info I've put together from sightings."
+        }
+      },
+      "eventsPanel": {
+        "title": "Events",
+        "panelAriaLabel": "Events Panel",
+        "closeAriaLabel": "Close Events",
+        "closeText": "Close",
+        "emptyText": "No available Events.",
+        "dateTbd": "Date TBD",
+        "showImageAriaLabel": "Show image {n}",
+        "previousImageAriaLabel": "Previous image",
+        "nextImageAriaLabel": "Next image",
+        "watchVideoText": "Watch Video",
+        "sectionExplainer": {
+          "enabled": true,
+          "headerText": "Event Details",
+          "closeButtonText": "Close",
+          "bodyText": "My sources tell me that CODEX might be making an appearance at some events... If you want to pop in yourself, they're all listed here."
+        }
+      },
+      "notificationCenter": {
+        "dismissAriaLabel": "Close Notification",
+        "newSightingsSingular": "Found {n} new sighting(s)",
+        "newSightingsPlural": "Found {n} new sighting(s)",
+        "unexploredSingular": "{n} unviewed sighting(s)",
+        "unexploredPlural": "{n} unviewed sighting(s)"
+      },
+      "map2D": {
+        "streetviewBackText": "Back to Map",
+        "startView": "worldmap"
+      },
+      "helpScreen": {
+        "ariaLabel": "Help",
+        "closeAriaLabel": "Close Help",
+        "closeText": "Close",
+        "introText": "Welcome! This is a handy guide to help you get familiar with the experience.",
+        "confirmedPinAlt": "Confirmed Sighting Pin",
+        "rumoredPinAlt": "Rumored Sighting Pin",
+        "eventPinAlt": "Events Pin",
+        "confirmedTooltip": "Confirmed\\nSightings",
+        "rumoredTooltip": "Rumored\\nSightings",
+        "eventTooltip": "Events",
+        "centerMapTooltip": "Center Map",
+        "globalMapTooltip": "Global Map",
+        "navigationTooltip": "Navigation",
+        "msgCenterTooltip": "Message\\nCenter",
+        "mapFiltersTooltip": "Map Filters"
+      },
+      "map3D": {
+        "backTo2DText": "Back to Map",
+        "tiltUp": "Tilt Up",
+        "rotateLeft": "Rotate Left",
+        "rotateRight": "Rotate Right",
+        "tiltDown": "Tilt Down"
+      },
+      "mapFilters": {
+        "panelAriaLabel": "Map Filters",
+        "confirmedTitle": "Toggle Confirmed Sightings",
+        "rumoredTitle": "Toggle Rumored Sightings",
+        "confirmedOnToast": "Confirmed Sightings: On",
+        "confirmedOffToast": "Confirmed Sightings: Off",
+        "rumoredOnToast": "Rumored Sightings: On",
+        "rumoredOffToast": "Rumored Sightings: Off"
+      },
+      "radar": {
+        "zoomGlobal": "Zoom to Global View",
+        "centerLocation": "Center on My Location",
+        "toastZoomGlobal": "Zooming to global view",
+        "toastCenterLocation": "Locating your neighborhood",
+        "toastCenterLocationError": "Unable to determine neighborhood location",
+        "zoomGlobalAlt": "Zoom to Global",
+        "centerAlt": "Center"
+      },
+      "msgCenter": {
+        "alertAriaLabel": "Message Alert",
+        "tickerAriaLabel": "Status Ticker",
+        "openSightingImageAriaLabel": "Open sighting image",
+        "defaultLabel": "Rumored Sightings",
+        "defaultTitle": "CODEX Sighting",
+        "tickerByHandle": "@{handle}'s sighting",
+        "tickerFromX": "Sighting from X (Twitter)"
+      },
+      "footer": {
+        "creditsTitle": "Credits",
+        "closeCreditsAriaLabel": "Close Credits Panel",
+        "brandAlt": "CODEX: A Decade of Technical Culture",
+        "releaseDateAlt": "Release Date",
+        "samsungAlt": "Powered by Samsung",
+        "legalAriaLabel": "Legal Links",
+        "copyright": "© & ™ 2026 CODEX ITER.",
+        "legalLinks": [
+          {
+            "text": "Privacy Policy",
+            "url": "https://intl.sonypictures.com/en/privacy-policy",
+            "target": "_blank"
+          },
+          {
+            "text": "Terms of Use",
+            "url": "https://intl.sonypictures.com/en/terms-of-use",
+            "target": "_blank"
+          },
+          {
+            "id": "credits",
+            "text": "Credits",
+            "url": "#",
+            "target": "_self"
+          }
+        ],
+        "footerCreditsLinks": [
+          {
+            "text": "Privacy Policy",
+            "url": "https://intl.sonypictures.com/en/privacy-policy",
+            "target": "_blank"
+          },
+          {
+            "text": "Terms of Use",
+            "url": "https://intl.sonypictures.com/en/terms-of-use",
+            "target": "_blank"
+          }
+        ]
+      }
+    },
+    "consentModals": {
+      "video": {
+        "header": "We use Cookies",
+        "content": "<div class=\"video-blocked-msg\"><p>To watch Videos on this site, you need to enable specific Cookies.</p><p><button class=\"btn btn-primary\" id=\"btn-show-consent-toggle\" tabindex=\"-1\">Privacy Settings</button></p></div>"
+      },
+      "ticketing": {
+        "header": "Functional Cookies Required",
+        "content": "To view the Get Tickets option, please enable functional Cookies in your Privacy Settings.<p style=\"margin-top:18px;\"><a href=\"javascript:OneTrust.ToggleInfoDisplay();\" class=\"btn btn-primary\">Privacy Settings</a></p>"
+      }
+    },
+    "watchTrailer": {
+      "buttonText": "Watch Trailer",
+      "ariaLabel": "Watch Trailer",
+      "show": true,
+      "trailerSrc": "https://www.youtube.com/watch?v=P3uI5sLosKU",
+      "trailerTitle": "Official Trailer 3"
+    },
+    "getTickets": {
+      "buttonText": "Buy Tickets",
+      "ariaLabel": "Buy Tickets",
+      "ticketingAlt": "Get Tickets Interface",
+      "show": false,
+      "widget": {
+        "enabled": true,
+        "assetBaseUrl": "d33t5dshwl6j0s.cloudfront.net/movies/spidermanbrandnewday/us/",
+        "jquerySrc": "d33t5dshwl6j0s.cloudfront.net/movies/spidermanbrandnewday/us/assets/js/jquery-3.6.0.min.js",
+        "scriptSrc": "d33t5dshwl6j0s.cloudfront.net/movies/spidermanbrandnewday/us/assets/js/sycaconst.js"
+      },
+      "linkOutToUrl": "",
+      "iframeUrl": "d33t5dshwl6j0s.cloudfront.net/movies/spidermanbrandnewday/us/index.html",
+      "imageUrl": ""
+    },
+    "pinCards": {
+      "viewSightingText": "View Sighting",
+      "playTrailerText": "Play Trailer",
+      "viewIn3dText": "3D View",
+      "view360Text": "360 View",
+      "viewEventText": "View Event"
+    },
+    "tickerMessages": {
+      "appLoading": "Loading",
+      "helpScreenTutorial": "Click Skip",
+      "helpScreenClose": "Click Close",
+      "preMapScreen": "Loading",
+      "preloaderTapToLaunch": "Click to launch",
+      "preloaderSelectSoundOption": "Select Sound Option",
+      "startupVideoIncoming": "Message from Ned Received",
+      "liveMapShare": "Share your CODEX sightings with the community!"
+    },
+    "preloader": {
+      "dangleClearancePx": 5,
+      "lines": [
+        "Initializing CODEX Tracker v4.2.0...",
+        "BOOTING CORE SERVICES [OK]",
+        "INITIALIZING MAP RENDER PIPELINE...",
+        "LOADING BASE ASSETS: FRAME UI [OK]",
+        "LOADING BASE ASSETS: TICKER MODULE [OK]",
+        "STARTING EVENT BUS [OK]",
+        "CALIBRATING SPRITESHEET RENDERER [OK]",
+        "WARMING IMAGE CACHE...",
+        "CHECKING FONT REGISTRY [OK]",
+        "VALIDATING ROUTE HANDLERS [OK]",
+        "BUILDING API CONNECTION POOL...",
+        "AUTHENTICATING SESSION TOKENS [OK]",
+        "RUNNING BOOT SELF-TEST: PASS",
+        "VERIFYING FEATURE FLAGS [OK]",
+        "PRELOADING CRITICAL UI FRAGMENTS...",
+        "MOUNTING OVERLAY CONTROLLERS [OK]",
+        "SYNCING STATE STORE [OK]",
+        "INITIALIZING LIGHTBOX ROUTES...",
+        "CHECKING MEDIA GATES [OK]",
+        "PATCHING FALLBACK HANDLERS [OK]",
+        "SCANNING MODULE DEPENDENCIES...",
+        "RESOLVING ASYNC TASK QUEUE [OK]",
+        "Compiling startup Log buffer...",
+        "VALIDATING RUNTIME CONFIG [OK]",
+        "STARTING HEALTH MONITORS [OK]",
+        "RUNNING ROUTINE CHECK: MEMORY CLEAN",
+        "RUNNING ROUTINE CHECK: NETWORK READY",
+        "RUNNING ROUTINE CHECK: ASSETS VERIFIED",
+        "RUNNING ROUTINE CHECK: OVERLAY READY",
+        "READYING LIVE UPDATE LOOP...",
+        "ENABLING TELEMETRY HOOKS [OK]",
+        "INITIALIZING CONSENT-SAFE MEDIA PATH...",
+        "SECURE CHANNEL ESTABLISHED [OK]",
+        "ALL SYSTEMS NOMINAL - TRACKER ONLINE"
+      ]
+    }
+  },
+  "xFeed": {
+    "title": "CODEX Tracker",
+    "closeAriaLabel": "Close Panel",
+    "closeText": "Close",
+    "panelAriaLabel": "Community Sightings Feed",
+    "postsAriaLabel": "Community Sighting Posts",
+    "handle": "CODEX Tracker",
+    "endpoint": "./x-feed.php",
+    "xFeedApiRefreshCacheFrequency": 3600,
+    "maxPosts": 20,
+    "emptyText": "No posts yet.",
+    "errorText": "Unable to load community feed at this time.",
+    "loadingText": "Loading posts...",
+    "reportCtaText": "Report a Sighting",
+    "stickyPost": {
+      "bodyText": "Got a CODEX sighting? Share your discovery with the community. Don't forget to include the location — intersection, city, country, whatever you can get. Let's find CODEX together!"
+    }
+  },
+  "spideyPins": [],
+  "videoGallery": {
+    "videos": [
+      {
+        "title": "Official Trailer 3",
+        "src": "https://www.youtube.com/watch?v=P3uI5sLosKU",
+        "default": true
+      },
+      {
+        "title": "Ned Interview 2",
+        "src": "https://www.youtube.com/watch?v=Yxz25mD3-9w&t=17s",
+        "default": true
+      },
+      {
+        "title": "Official Trailer 2",
+        "src": "https://www.youtube.com/watch?v=Q27BvUipKn8",
+        "default": true
+      },
+      {
+        "title": "Ned Interview",
+        "src": "https://www.youtube.com/watch?v=0ceb-6OoJw8",
+        "default": true
+      },
+      {
+        "title": "Official Trailer 1",
+        "src": "https://www.youtube.com/watch?v=8TZMtslA3UY",
+        "default": true
+      }
+    ]
+  },
+  "webwatch": {
+    "articles": [
+      {
+        "image": "./images/web_watch/scorpion.jpg",
+        "name": "Scorpion",
+        "desc": "Feels like Spider-Man and Scorpion have some history, but maybe I'm reading too much into it. Whatever you do, don't get stung by that mechanical tail."
+      },
+      {
+        "image": "./images/web_watch/boomerang.jpg",
+        "name": "Boomerang",
+        "desc": "Easy name to remember, hard weapon to dodge. Boomerang fights with (you guessed it) special boomerangs with different abilities."
+      },
+      {
+        "image": "./images/web_watch/tarantula.jpg",
+        "name": "Tarantula",
+        "desc": "Tarantula uses poisoned boots as weapons. Watch out for his feet. Fortunately Spider-Man has lightning-fast reflexes."
+      },
+      {
+        "image": "./images/web_watch/hand.jpg",
+        "name": "The Hand",
+        "desc": "Can someone tell me how ninjas showed up in New York again? The all-red look is cool, but that makes it tough to stay stealthy."
+      },
+      {
+        "image": "./images/web_watch/punisher.jpg",
+        "name": "Punisher",
+        "desc": "Is he Spider-Man's friend? They've been seen together, but they don't always seem to be on the same side. Either way, I don't want to get on his bad side."
+      },
+      {
+        "image": "./images/web_watch/unknown.jpg",
+        "name": "Unknown",
+        "desc": "Word is there's a new mysterious villain in town. Send me any leads — this one's hard to track."
+      }
+    ]
+  },
+  "404page": {
+    "message": "Wow, CODEX sightings are overflowing! Please check back soon."
+  },
+  "soundTriggers": {
+    "preloaderOptIn": {
+      "category": "preloader",
+      "enabled": true
+    },
+    "notificationAlert": {
+      "category": "notification",
+      "enabled": true
+    },
+    "activityLog": {
+      "category": "activity",
+      "enabled": true
+    },
+    "webwatch": {
+      "category": "webwatch",
+      "enabled": true
+    },
+    "events": {
+      "category": "events",
+      "enabled": true
+    },
+    "xFeed": {
+      "category": "xFeed",
+      "enabled": true
+    },
+    "punisherSightings": {
+      "category": "punisher",
+      "enabled": true
+    },
+    "handSightings": {
+      "category": "hand",
+      "enabled": true
+    },
+    "generalSightings": {
+      "category": "general",
+      "enabled": true
+    }
+  },
+  "registeredSounds": {
+    "ned_bites": [
+      {
+        "name": "spidey_jingle",
+        "src": "./sounds/spidey_jingle.mp3",
+        "category": "notification"
+      },
+      {
+        "name": "welcome_to_the_Spidey_Tracker",
+        "src": "flash.sonypictures.com/movies/spidermanbrandnewday/sounds/ned_sound_bites/welcome_to_the_Spidey_Tracker.MP3",
+        "category": "preloader"
+      },
+      {
+        "name": "another_day_another_sighting",
+        "src": "flash.sonypictures.com/movies/spidermanbrandnewday/sounds/ned_sound_bites/another_day_another_sighting.MP3",
+        "category": "preloader, activity, webwatch, xFeed, general"
+      },
+      {
+        "name": "new_sightings_just_came_in...adding_them_now",
+        "src": "flash.sonypictures.com/movies/spidermanbrandnewday/sounds/ned_sound_bites/new_sightings_just_came_in...adding_them_now.MP3",
+        "category": "activity, preloader"
+      }
+    ]
+  }
+}

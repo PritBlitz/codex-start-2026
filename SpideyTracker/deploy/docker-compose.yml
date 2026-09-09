@@ -1,0 +1,27 @@
+services:
+  app:
+    build: .
+    container_name: spidey-app
+    restart: unless-stopped
+    # 使用宿主机网络：直接连接服务器自带的 MySQL（127.0.0.1）
+    network_mode: host
+    environment:
+      DB_HOST: ${DB_HOST:-127.0.0.1}
+      DB_PORT: ${DB_PORT:-3306}
+      DB_USER: ${DB_USER:-spidey}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME:-spidey_tracker}
+      JWT_SECRET: ${JWT_SECRET}
+      PORT: "8899"
+      # SMTP 邮箱配置（.env 填写后传入容器）
+      SMTP_ENABLED: ${SMTP_ENABLED:-false}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-465}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      SMTP_FROM: ${SMTP_FROM:-}
+    volumes:
+      - uploads-data:/app/spideytracker.net/uploads
+
+volumes:
+  uploads-data:
