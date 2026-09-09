@@ -6,9 +6,6 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "./components/animat
 import codexDark from "./assets/codex_dark.png";
 import codexLight from "./assets/code_light.png";
 import bgLogo from "./assets/bg_logo.png";
-import heroCenterWeb from "./assets/hero_center_web.png";
-import hangingSpidey from "./assets/hanging_spidey.png";
-import heroBg from "./assets/hero_bg.png";
 
 // ─── Reduced-motion guard ────────────────────────────────────────────────────
 const prefersReduced =
@@ -124,39 +121,6 @@ function SonarButton({
       {children}
       {pulse}
     </motion.button>
-  );
-}
-
-// ─── Floating code fragment ───────────────────────────────────────────────────
-function FloatingCode({
-  text,
-  x,
-  y,
-  duration,
-  delay,
-}: {
-  text: string;
-  x: string;
-  y: string;
-  duration: number;
-  delay: number;
-}) {
-  if (prefersReduced) return null;
-  return (
-    <motion.div
-      className="absolute font-mono text-xs font-bold bg-slate-900 text-white px-2 py-1 pointer-events-none select-none"
-      style={{ left: x, top: y }}
-      animate={{ y: [0, -20, 5, -12, 0] }}
-      transition={{
-        duration,
-        repeat: Infinity,
-        delay,
-        ease: "easeInOut",
-        repeatType: "mirror",
-      }}
-    >
-      {text}
-    </motion.div>
   );
 }
 
