@@ -365,7 +365,7 @@ function FAQItem({
 // ─── Footer ───────────────────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer className="bg-background-dark text-white py-20 px-6 border-t-4 border-slate-900">
+    <footer className="bg-background-dark text-black py-20 px-6 border-t-4 border-slate-900">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 relative z-10">
         {/* Logo + description */}
         <div className="col-span-2">
@@ -380,7 +380,7 @@ function Footer() {
             </motion.div>
             <span className="text-3xl font-black tracking-tighter">CODEX ITER</span>
           </div>
-          <p className="text-slate-400 max-w-md font-medium text-lg leading-relaxed">
+          <p className="text-black max-w-md font-medium text-lg leading-relaxed">
             A student-led engineering organization dedicated to technological excellence,
             open-source innovation, and building the future of the web.
           </p>
@@ -388,7 +388,7 @@ function Footer() {
 
         {/* Navigate */}
         <div>
-          <h5 className="font-black text-xl mb-6 uppercase tracking-widest text-primary">
+          <h5 className="font-black text-xl mb-6 uppercase tracking-widest text-[#0707F2]">
             Navigate
           </h5>
           <ul className="space-y-4 font-bold">
@@ -414,7 +414,7 @@ function Footer() {
 
         {/* Connect */}
         <div>
-          <h5 className="font-black text-xl mb-6 uppercase tracking-widest text-primary">
+          <h5 className="font-black text-xl mb-6 uppercase tracking-widest text-[#0707F2]">
             Connect
           </h5>
           <div className="flex gap-4">
@@ -452,7 +452,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-slate-500 font-mono text-sm relative z-10">
+      <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-black font-mono text-sm relative z-10">
         <p className="text-sm text-center">
           © 2026 CODEX ITER. ALL RIGHTS RESERVED.
         </p>
@@ -677,10 +677,12 @@ export default function App() {
             </motion.div>
 
             <h1 className="text-5xl md:text-[5rem] font-black leading-[1.1] text-white drop-shadow-md mb-6 font-display py-2">
-              <AnimatedHeading text={HERO_TITLE} />
+              <span className="text-[#0707F2]">
+                <AnimatedHeading text={HERO_TITLE} />
+              </span>
               {" "}
               <br />
-              <span className="text-primary italic drop-shadow-none">
+              <span className="text-[#0707F2] italic drop-shadow-none">
                 <AnimatedHeading text={HERO_SUB1} />
               </span>{" "}
               <br />
