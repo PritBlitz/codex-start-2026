@@ -466,27 +466,27 @@ function Footer() {
 }
 
 // ─── Static data ──────────────────────────────────────────────────────────────
-const DOMAINS = [
-  {
-    icon: "code_blocks",
-    title: "Web & Systems",
-    desc: "From responsive frontends to scalable cloud-native backends — build real products that ship.",
-  },
-  {
-    icon: "neurology",
-    title: "AI & Machine Learning",
-    desc: "Work on neural architectures, NLP pipelines, and predictive models that solve real problems.",
-  },
-  {
-    icon: "calculate",
-    title: "Competitive Programming",
-    desc: "Master data structures, algorithms, and graph theory to dominate on ICPC and Codeforces.",
-  },
-  {
-    icon: "brush",
-    title: "UI/UX & Product Design",
-    desc: "Craft interfaces and experiences with Figma, design systems, and user research principles.",
-  },
+const ACADEMIC_ARCHIVES = [
+  { title: "1st Year Syllabus", desc: "Complete curriculum breakdown and reference material for freshmen.", btn: "Download" },
+  { title: "2nd Year Syllabus", desc: "Advanced engineering modules and core branch subjects.", btn: "Download" },
+  { title: "PYQ Database", desc: "Access the repository of previous year questions across all semesters.", btn: "Access Repository" },
+];
+
+const TECH_TRACK = [
+  { title: "AI / ML", desc: "Artificial Intelligence & Machine Learning" },
+  { title: "IoT & Cybersec", desc: "Internet of Things & Cybersecurity" },
+  { title: "Web & App Dev", desc: "Full-Stack Engineering" },
+  { title: "Cloud & DevOps", desc: "Infrastructure and Deployment" },
+];
+
+const CREATIVE_TRACK = [
+  { title: "Graphic Designers", desc: "UI/UX & Branding" },
+  { title: "Video Editors", desc: "Motion Graphics & Media" },
+  { title: "Content Writers", desc: "Technical & Creative Copy" },
+];
+
+const OPS_TRACK = [
+  { title: "PR, Management & Outreach", desc: "Event coordination, sponsorships, public relations" },
 ];
 
 const STATS = [
@@ -840,47 +840,89 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── DOMAINS ──────────────────────────────────────────────────── */}
-      <section
-        id="domains"
-        className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20"
-      >
+      {/* ── ACADEMIC ARCHIVES ──────────────────────────────────────────── */}
+      <section className="py-24 bg-white border-b-4 border-slate-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal className="flex items-end justify-between mb-16">
-            <h2 className="text-5xl font-black text-slate-900 uppercase leading-none font-display">
-              What We
-              <br />
-              <span className="text-primary">Master</span>
-            </h2>
-            <div className="hidden md:block text-right font-mono font-bold text-slate-900 opacity-60">
-              // RECRUITMENT WINGS
-            </div>
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold uppercase border-b-4 border-black inline-block mb-8 font-display"> // ACADEMIC_ARCHIVES </h2>
           </ScrollReveal>
-
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {DOMAINS.map((domain, i) => (
-              <StaggerItem key={i}>
-                <motion.div
-                  className="bg-white border-4 border-slate-900 p-8 cursor-pointer h-full"
-                  whileHover={{ backgroundColor: "#0707f2", color: "#ffffff" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span
-                    className="material-symbols-outlined text-5xl mb-6 text-primary block"
-                    style={{ transition: "color 0.2s" }}
-                  >
-                    {domain.icon}
-                  </span>
-                  <h3 className="text-2xl font-black mb-4 uppercase font-display">
-                    {domain.title}
-                  </h3>
-                  <p className="font-medium opacity-80 text-sm leading-relaxed">
-                    {domain.desc}
-                  </p>
-                </motion.div>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {ACADEMIC_ARCHIVES.map((item, i) => (
+              <StaggerItem key={i} className="h-full">
+                <div className="relative bg-[#C4DFED] border-4 border-slate-900 brutalist-shadow p-8 flex flex-col h-full hover:-translate-y-2 transition-transform duration-200">
+                  <div className="absolute top-4 right-4 font-mono text-xl text-slate-900 opacity-20 font-bold">&lt;/&gt;</div>
+                  <h3 className="text-2xl font-black mb-4 uppercase font-display text-slate-900">{item.title}</h3>
+                  <p className="font-medium text-slate-800 text-sm leading-relaxed mb-8 flex-grow">{item.desc}</p>
+                  <button className="bg-[#F53D8A] text-white border-2 border-slate-900 py-3 font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-[4px_4px_0px_0px_#0f172a] active:shadow-none active:translate-y-1 active:translate-x-1">
+                    {item.btn}
+                  </button>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      {/* ── OPEN RECRUITMENT TRACKS ──────────────────────────────────── */}
+      <section id="domains" className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <ScrollReveal>
+            <h2 className="text-4xl font-black uppercase mb-10 text-slate-900 font-display"> // OPEN_RECRUITMENT_TRACKS </h2>
+          </ScrollReveal>
+
+          {/* TECH TRACK */}
+          <div className="mb-16">
+            <ScrollReveal>
+              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: TECH ]</h3>
+            </ScrollReveal>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {TECH_TRACK.map((role, i) => (
+                <StaggerItem key={i} className="h-full">
+                  <div className="bg-white border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
+                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
+                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
+                    <p className="text-sm font-medium text-slate-700">{role.desc}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+
+          {/* CREATIVE TRACK */}
+          <div className="mb-16">
+            <ScrollReveal>
+              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: CREATIVE & MEDIA ]</h3>
+            </ScrollReveal>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {CREATIVE_TRACK.map((role, i) => (
+                <StaggerItem key={i} className="h-full">
+                  <div className="bg-[#FCB6D1] border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
+                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
+                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
+                    <p className="text-sm font-medium text-slate-800">{role.desc}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+
+          {/* OPS TRACK */}
+          <div>
+            <ScrollReveal>
+              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: OPERATIONS ]</h3>
+            </ScrollReveal>
+            <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {OPS_TRACK.map((role, i) => (
+                <StaggerItem key={i} className="lg:col-span-1 h-full">
+                  <div className="bg-[#C4DFED] border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
+                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
+                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
+                    <p className="text-sm font-medium text-slate-800">{role.desc}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
       </section>
 
