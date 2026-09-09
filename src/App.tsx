@@ -593,6 +593,70 @@ const FAQS = [
 ];
 
 
+// ─── Notepad Viewer ────────────────────────────────────────────────────────────
+function NotepadViewer() {
+  const [activeYear, setActiveYear] = useState("1st Year");
+  
+  const MOCK_SYLLABUS: Record<string, string[]> = {
+    "1st Year": [
+      "Engineering Mathematics - I & II",
+      "Basic Electrical Engineering",
+      "Programming in C / C++",
+      "Engineering Physics / Chemistry",
+      "Communication Skills"
+    ],
+    "2nd Year": [
+      "Data Structures and Algorithms",
+      "Object Oriented Programming (Java)",
+      "Digital Logic Design",
+      "Discrete Mathematics",
+      "Computer Organization & Architecture"
+    ],
+    "3rd Year": [
+      "Operating Systems",
+      "Database Management Systems",
+      "Computer Networks",
+      "Software Engineering",
+      "Design & Analysis of Algorithms"
+    ],
+    "4th Year": [
+      "Machine Learning & AI",
+      "Cloud Computing",
+      "Cyber Security",
+      "Major Project / Internship",
+      "Electives (IoT, Blockchain, etc.)"
+    ]
+  };
+
+  const years = Object.keys(MOCK_SYLLABUS);
+
+  return (
+    <div className="bg-[#FFF9C4] border-4 border-slate-900 brutalist-shadow flex flex-col h-full relative" style={{ backgroundImage: "repeating-linear-gradient(transparent, transparent 31px, #B3E5FC 31px, #B3E5FC 32px)", backgroundSize: "100% 32px", backgroundPosition: "0 8px" }}>
+      {/* Header/Tabs */}
+      <div className="flex border-b-4 border-slate-900 bg-white flex-wrap">
+        {years.map(year => (
+          <button
+            key={year}
+            onClick={() => setActiveYear(year)}
+            className={`flex-1 py-3 px-2 font-bold font-mono border-r-4 border-slate-900 last:border-r-0 transition-colors whitespace-nowrap ${activeYear === year ? "bg-[#0707f2] text-white" : "bg-white text-slate-900 hover:bg-slate-100"}`}
+          >
+            {year}
+          </button>
+        ))}
+      </div>
+      
+      {/* Content */}
+      <div className="p-8 flex-grow font-mono text-slate-900 text-lg leading-[32px]">
+        <ul className="list-disc pl-6">
+          {MOCK_SYLLABUS[activeYear].map((item, idx) => (
+            <li key={idx} className="mb-0">{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main App Component ────────────────────────────────────────────────────────
 export default function App() {
   const HERO_TITLE = "CODEX";
@@ -846,19 +910,21 @@ export default function App() {
           <ScrollReveal>
             <h2 className="text-3xl font-bold uppercase border-b-4 border-black inline-block mb-8 font-display"> // ACADEMIC_ARCHIVES </h2>
           </ScrollReveal>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ACADEMIC_ARCHIVES.map((item, i) => (
-              <StaggerItem key={i} className="h-full">
-                <div className="relative bg-[#C4DFED] border-4 border-slate-900 brutalist-shadow p-8 flex flex-col h-full hover:-translate-y-2 transition-transform duration-200">
-                  <div className="absolute top-4 right-4 font-mono text-xl text-slate-900 opacity-20 font-bold">&lt;/&gt;</div>
-                  <h3 className="text-2xl font-black mb-4 uppercase font-display text-slate-900">{item.title}</h3>
-                  <p className="font-medium text-slate-800 text-sm leading-relaxed mb-8 flex-grow">{item.desc}</p>
-                  <button className="bg-[#F53D8A] text-white border-2 border-slate-900 py-3 font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-[4px_4px_0px_0px_#0f172a] active:shadow-none active:translate-y-1 active:translate-x-1">
-                    {item.btn}
-                  </button>
-                </div>
-              </StaggerItem>
-            ))}
+          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <StaggerItem className="lg:col-span-2 h-full">
+              <NotepadViewer />
+            </StaggerItem>
+            
+            <StaggerItem className="lg:col-span-1 h-full">
+              <div className="relative bg-[#C4DFED] border-4 border-slate-900 brutalist-shadow p-8 flex flex-col h-full hover:-translate-y-2 transition-transform duration-200">
+                <div className="absolute top-4 right-4 font-mono text-xl text-slate-900 opacity-20 font-bold">&lt;/&gt;</div>
+                <h3 className="text-2xl font-black mb-4 uppercase font-display text-slate-900">PYQ Database</h3>
+                <p className="font-medium text-slate-800 text-sm leading-relaxed mb-8 flex-grow">Access the repository of previous year questions across all semesters.</p>
+                <button className="bg-[#F53D8A] text-white border-2 border-slate-900 py-3 font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-[4px_4px_0px_0px_#0f172a] active:shadow-none active:translate-y-1 active:translate-x-1">
+                  Access Repository
+                </button>
+              </div>
+            </StaggerItem>
           </StaggerContainer>
         </div>
       </section>
