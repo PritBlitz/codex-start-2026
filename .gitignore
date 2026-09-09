@@ -37,4 +37,7 @@ SpideyTracker/*.bat
 SpideyTracker/deploy/export-sql.cjs
 
 # Vite
-*.local
+
+
+# Exclude local Mapbox token config
+SpideyTracker/spideytracker.net/config.js
