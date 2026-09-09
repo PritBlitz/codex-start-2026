@@ -230,7 +230,9 @@ function OrientationNavbar() {
           ))}
 
           <motion.a
-            href="#register"
+            href="https://www.codex-iter.in/"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={prefersReduced ? {} : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.55 }}
@@ -238,7 +240,7 @@ function OrientationNavbar() {
             whileTap={{ scale: 0.97 }}
             className="bg-[#F53D8A] text-white px-6 py-2 font-bold brutalist-shadow border-2 border-slate-900 transition-colors hover:brightness-110 cursor-pointer"
           >
-            Register Now
+            Main Website
           </motion.a>
         </motion.div>
 
@@ -285,11 +287,13 @@ function OrientationNavbar() {
                 </a>
               ))}
               <a
-                href="#register"
+                href="https://www.codex-iter.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMenuOpen(false)}
                 className="bg-primary text-white px-6 py-3 font-bold brutalist-shadow border-2 border-slate-900 transition-all hover:bg-white hover:text-slate-900 w-full mt-2 text-center"
               >
-                Register Now
+                Main Website
               </a>
             </div>
           </motion.div>
