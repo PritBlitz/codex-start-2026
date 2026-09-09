@@ -611,20 +611,6 @@ function NotepadViewer() {
       "Digital Logic Design",
       "Discrete Mathematics",
       "Computer Organization & Architecture"
-    ],
-    "3rd Year": [
-      "Operating Systems",
-      "Database Management Systems",
-      "Computer Networks",
-      "Software Engineering",
-      "Design & Analysis of Algorithms"
-    ],
-    "4th Year": [
-      "Machine Learning & AI",
-      "Cloud Computing",
-      "Cyber Security",
-      "Major Project / Internship",
-      "Electives (IoT, Blockchain, etc.)"
     ]
   };
 
