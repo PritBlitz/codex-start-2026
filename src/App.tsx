@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Instagram, Linkedin, Mail } from "lucide-react";
@@ -10,12 +10,12 @@ import heroCenterWeb from "./assets/hero_center_web.png";
 import hangingSpidey from "./assets/hanging_spidey.png";
 import heroBg from "./assets/hero_bg.png";
 
-// ─── Reduced-motion guard ────────────────────────────────────────────────────
+// â”€â”€â”€ Reduced-motion guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const prefersReduced =
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// ─── Staggered character reveal ──────────────────────────────────────────────
+// â”€â”€â”€ Staggered character reveal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AnimatedHeading({ text, className }: { text: string; className?: string }) {
   const chars = text.split("");
   return (
@@ -44,7 +44,7 @@ function AnimatedHeading({ text, className }: { text: string; className?: string
   );
 }
 
-// ─── Typing effect hook ──────────────────────────────────────────────────────
+// â”€â”€â”€ Typing effect hook â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function useTypingEffect(text: string, startDelay: number, speed = 28) {
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
@@ -73,7 +73,7 @@ function useTypingEffect(text: string, startDelay: number, speed = 28) {
   return { displayed, done };
 }
 
-// ─── Sonar pulse button / link ───────────────────────────────────────────────
+// â”€â”€â”€ Sonar pulse button / link â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function SonarButton({
   children,
   className,
@@ -127,7 +127,7 @@ function SonarButton({
   );
 }
 
-// ─── Floating code fragment ───────────────────────────────────────────────────
+// â”€â”€â”€ Floating code fragment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function FloatingCode({
   text,
   x,
@@ -160,7 +160,7 @@ function FloatingCode({
   );
 }
 
-// ─── Orientation Navbar ───────────────────────────────────────────────────────
+// â”€â”€â”€ Orientation Navbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function OrientationNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -303,7 +303,7 @@ function OrientationNavbar() {
   );
 }
 
-// ─── FAQ Item ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ FAQ Item â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function FAQItem({
   question,
   answer,
@@ -366,7 +366,7 @@ function FAQItem({
   );
 }
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function Footer() {
   return (
     <footer className="bg-background-dark text-black py-20 px-6 border-t-4 border-slate-900">
@@ -458,14 +458,14 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-black font-mono text-sm relative z-10">
         <p className="text-sm text-center">
-          © 2026 CODEX ITER. ALL RIGHTS RESERVED.
+          Â© 2026 CODEX ITER. ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>
   );
 }
 
-// ─── Static data ──────────────────────────────────────────────────────────────
+// â”€â”€â”€ Static data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const ACADEMIC_ARCHIVES = [
   { title: "1st Year Syllabus", desc: "Complete curriculum breakdown and reference material for freshmen.", btn: "Download" },
   { title: "2nd Year Syllabus", desc: "Advanced engineering modules and core branch subjects.", btn: "Download" },
@@ -604,7 +604,7 @@ const FAQS = [
   {
     question: "What is the expected time commitment?",
     answer:
-      "Most members dedicate 6–10 hours per week on average. This includes weekly domain meetings, project work, and optional workshops or events. During hackathon season it may be more — but it's always opt-in based on your bandwidth.",
+      "Most members dedicate 6â€“10 hours per week on average. This includes weekly domain meetings, project work, and optional workshops or events. During hackathon season it may be more â€” but it's always opt-in based on your bandwidth.",
   },
   {
     question: "Can students from all branches apply?",
@@ -624,12 +624,12 @@ const FAQS = [
   {
     question: "What happens after I complete the technical task?",
     answer:
-      "All submitted tasks are reviewed by domain leads within 3–5 days. Every applicant receives feedback regardless of outcome. Selected candidates are invited to an informal conversation before the final induction announcement.",
+      "All submitted tasks are reviewed by domain leads within 3â€“5 days. Every applicant receives feedback regardless of outcome. Selected candidates are invited to an informal conversation before the final induction announcement.",
   },
 ];
 
 
-// ─── Notepad Viewer ────────────────────────────────────────────────────────────
+// â”€â”€â”€ Notepad Viewer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function NotepadViewer() {
   const [activeYear, setActiveYear] = useState("1st Year");
   
@@ -679,7 +679,7 @@ function NotepadViewer() {
   );
 }
 
-// ─── Main App Component ────────────────────────────────────────────────────────
+// â”€â”€â”€ Main App Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export default function App() {
   const [activeTrack, setActiveTrack] = useState<'tech' | 'non-tech'>('tech');
   const HERO_TITLE = "CODEX";
@@ -699,7 +699,7 @@ export default function App() {
   return (
     <>
       <Helmet>
-        <title>CODEX ITER | Recruitment 2026 — Orientation Portal</title>
+        <title>CODEX ITER | Recruitment 2026 â€” Orientation Portal</title>
         <meta
           name="description"
           content="Apply to join CODEX ITER Intake 2026. Explore our domains, track the recruitment roadmap, and register for the orientation session."
@@ -712,15 +712,15 @@ export default function App() {
         <meta property="og:title" content="CODEX ITER | Recruitment 2026" />
         <meta
           property="og:description"
-          content="Join CODEX ITER — a decade of technical culture. Recruitment open for Intake 2026."
+          content="Join CODEX ITER â€” a decade of technical culture. Recruitment open for Intake 2026."
         />
         <meta property="og:type" content="website" />
       </Helmet>
 
-      {/* ── NAVBAR ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <OrientationNavbar />
 
-      {/* ── HERO ───────────────────────────────────────────────────── */}
+      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="relative min-h-[90vh] flex items-center overflow-hidden border-b-4 border-slate-900"
         style={{
@@ -842,7 +842,7 @@ export default function App() {
                 {/* SpideyTracker iframe */}
                 <div className="relative w-full overflow-hidden" style={{ height: "640px" }}>
                   <iframe
-                    src="http://127.0.0.1:8899/"
+                    src="/SpideyTracker/index.html"
                     title="CODEX Tracker"
                     id="codex-tracker-frame"
                     className="absolute inset-0 w-full h-full border-0"
@@ -879,7 +879,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── IMPACT STATS ─────────────────────────────────────────────── */}
+      {/* â”€â”€ IMPACT STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white border-b-4 border-slate-900">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12">
@@ -891,7 +891,7 @@ export default function App() {
               </h2>
               <div className="space-y-6 text-lg text-slate-700 leading-relaxed font-sans">
                 <p>
-                  CODEX ITER isn't just a club — it's an ecosystem. In ten years we've
+                  CODEX ITER isn't just a club â€” it's an ecosystem. In ten years we've
                   launched startups, won national hackathons, and shipped open-source
                   projects used by thousands.
                 </p>
@@ -927,7 +927,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── ACADEMIC ARCHIVES ──────────────────────────────────────────── */}
+      {/* â”€â”€ ACADEMIC ARCHIVES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white border-b-4 border-slate-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal>
@@ -952,7 +952,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── OPEN RECRUITMENT TRACKS ──────────────────────────────────── */}
+      {/* â”€â”€ OPEN RECRUITMENT TRACKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section id="domains" className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal>
@@ -1015,7 +1015,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── TIMELINE ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ TIMELINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         id="timeline"
         className="py-24 bg-white border-b-4 border-slate-900 scroll-mt-20"
@@ -1114,7 +1114,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────────────── */}
+      {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         id="faq"
         className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20"
@@ -1143,12 +1143,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── FINAL CTA ────────────────────────────────────────────────── */}
+      {/* â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <ScrollReveal>
         <section id="register" className="bg-primary py-24 scroll-mt-20 relative">
           <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
             <div className="inline-block bg-white text-primary px-4 py-1 font-bold mb-8 text-sm uppercase tracking-widest font-mono brutalist-shadow border-2 border-slate-900">
-              Applications Open — Intake 2026
+              Applications Open â€” Intake 2026
             </div>
             <h2 className="text-6xl md:text-8xl font-black text-white mb-8 uppercase leading-none italic font-display">
               Join The Codex.
@@ -1179,8 +1179,9 @@ export default function App() {
         </section>
       </ScrollReveal>
 
-      {/* ── FOOTER ───────────────────────────────────────────────────── */}
+      {/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <Footer />
     </>
   );
 }
+

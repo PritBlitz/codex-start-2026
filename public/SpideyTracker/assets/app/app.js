@@ -173,7 +173,7 @@
       var el = $('[data-stat-fav]', h.body);
       if (el) el.textContent = (d.favorites || []).length;
     }).catch(function () {});
-    api('/api/sightings').then(function (d) {
+    api('./api/sightings.json').then(function (d) {
       var n = (d.sightings || []).filter(function (s) { return s.author && s.author.id === currentUser.id; }).length;
       var el = $('[data-stat-mine]', h.body);
       if (el) el.textContent = n;
@@ -369,7 +369,7 @@
 
     btn.disabled = true;
     errorEl.textContent = '';
-    api('/api/sightings', { method: 'POST', body: fd })
+    api('./api/sightings.json', { method: 'POST', body: fd })
       .then(function (d) {
         h.close();
         reportState = null;
@@ -590,7 +590,7 @@
   }
 
   function renderMySightings(h, list) {
-    api('/api/sightings').then(function (d) {
+    api('./api/sightings.json').then(function (d) {
       var mine = (d.sightings || []).filter(function (s) { return s.author && s.author.id === currentUser.id; });
       if (!mine.length) {
         list.innerHTML = '<div class="app-list-empty">CODEX —— CODEX"CODEX"CODEX！</div>';
@@ -665,7 +665,7 @@
   }
 
   function refreshUserPins() {
-    return api('/api/sightings').then(function (d) {
+    return api('./api/sightings.json').then(function (d) {
       var next = (d.sightings || []).map(apiToPin);
       
       // Inject new member pin

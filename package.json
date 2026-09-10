@@ -4,10 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"npm run server\"",
+    "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview",
-    "server": "node SpideyTracker/server/server.js"
+    "preview": "vite preview"
   },
   "dependencies": {
     "clsx": "^2.1.1",

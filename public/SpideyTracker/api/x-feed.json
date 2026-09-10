@@ -1,0 +1,199 @@
+﻿{
+    "posts":  [
+                  {
+                      "id":  "usr-1",
+                      "text":  "Rohit Jain - Software Engineer @ Google\nCODEX Alumni. Expert in Agentic AI and full-stack development.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-2",
+                      "text":  "John Doe - Lead Developer\nCODEX Mentor. Guiding the next generation of engineers.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-3",
+                      "text":  "Jane Smith - Frontend Recruit\nNew recruit passionate about React and modern web design.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-4",
+                      "text":  "Alice Brown - Sr. Data Scientist\nAlumni working on predictive models and big data architecture.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-5",
+                      "text":  "Bob White - Backend Engineer\nMentor specializing in Node.js, microservices, and databases.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-6",
+                      "text":  "Charlie Green - UI/UX Designer\nRecruit with an eye for stunning aesthetics and user experience.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-7",
+                      "text":  "David Black - CTO @ TechStartup\nAlumni who founded a successful startup in the fintech space.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-8",
+                      "text":  "Eve Adams - DevOps Specialist\nMentor teaching Kubernetes, Docker, and CI/CD pipelines.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-9",
+                      "text":  "Frank Clark - ML Enthusiast\nRecruit exploring deep learning and neural networks.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-10",
+                      "text":  "Grace Hall - Security Researcher\nAlumni focusing on zero-day vulnerabilities and infosec.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-11",
+                      "text":  "Harry Jones - Cloud Architect\nMentor helping scale applications on AWS and GCP.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-12",
+                      "text":  "Ivy King - App Developer\nRecruit building cross-platform mobile apps in Flutter.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-13",
+                      "text":  "Jack Lee - Product Manager\nAlumni leading product strategy at a top tech firm.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-14",
+                      "text":  "Kelly Moore - Fullstack Dev\nMentor with deep knowledge of Next.js and PostgreSQL.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  },
+                  {
+                      "id":  "usr-15",
+                      "text":  "Leo Perez - Blockchain Dev\nRecruit experimenting with smart contracts and Web3.",
+                      "created_at":  "2026-09-10 07:31:31",
+                      "author":  {
+                                     "name":  "mockuser",
+                                     "username":  "mockuser",
+                                     "avatar_url":  "./favicon.png"
+                                 },
+                      "media":  [
+
+                                ]
+                  }
+              ]
+}
