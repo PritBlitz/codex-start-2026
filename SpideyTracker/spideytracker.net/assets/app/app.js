@@ -144,28 +144,8 @@
     document.dispatchEvent(new CustomEvent('app:site-init-ready')); // Trigger MainMenu re-render
   }
 
-  function checkAuth() {
-    return api('/api/auth/me').then(function (d) {
-      currentUser = d.user;
-    }).catch(function () {
-      currentUser = null;
-    }).then(function () {
-      updateMenuState();
-      if (currentUser) loadFavIds();
-    });
-  }
-
-  // CODEXFavorited id
-  function loadFavIds() {
-    favIds = {};
-    return api('/api/favorites').then(function (d) {
-      (d.favorites || []).forEach(function (f) {
-        favIds[f.sighting_id ? 'usr-' + f.sighting_id : f.pin_id] = true;
-      });
-    }).catch(function () {});
-  }
-
-  function openUserPanel() {
+  function checkAuth() { return Promise.resolve(); }
+    function openUserPanel() {
     closeAllAppModals();
     if (!currentUser) {
       toast('Please log in first');
@@ -219,14 +199,8 @@
   /* ==================== Login / RegisterCODEX ==================== */
   var authState = { onSuccess: null };
 
-  function openAuthModal(mode, onSuccess) {
-    closeAllAppModals();
-    authState.onSuccess = onSuccess || null;
-    var h = createModal(mode === 'register' ? 'RegisterCODEX' : 'Login', false);
-    renderAuth(h, mode || 'login');
-  }
-
-  function renderAuth(h, mode) {
+  function openAuthModal(mode, onSuccess) { }
+    function renderAuth(h, mode) {
     var logged = currentUser && mode === 'login';
     h.body.innerHTML =
       '<div class="app-tabs">' +
@@ -364,158 +338,8 @@
   }
 
   /* ==================== CODEX ==================== */
-  function openReportModal() {
-    closeAllAppModals();
-    if (!currentUser) {
-      toast('CODEXLoginCODEX');
-      openAuthModal('login', function () { openReportModal(); });
-      return;
-    }
-    var h = createModal('CODEX', true);
-    reportState = { h: h, picked: null, images: [] };
-    renderReport(h);
-  }
-
-  function renderReport(h) {
-    var st = reportState;
-    h.body.innerHTML =
-      '<form data-report-form>' +
-      '  <div class="app-field"><label class="app-field__label">Title *</label>' +
-      '    <input class="app-input" name="title" placeholder="CODEX：CODEXSpider-ManCODEX" required></div>' +
-      '  <div class="app-field"><label class="app-field__label">CODEX</label>' +
-      '    <div class="app-type-row">' +
-      '      <label class="app-type-opt is-active"><input type="radio" name="pin_type" value="rumored" checked><img src="img/images/ui/map/red_pin.png" alt="Rumored">Rumored Sightings</label>' +
-      '      <label class="app-type-opt"><input type="radio" name="pin_type" value="confirmed"><img src="img/images/ui/map/green_pin.png" alt="Confirmed">Confirmed Sightings</label>' +
-      '    </div>' +
-      '  </div>' +
-      '  <div class="app-field"><label class="app-field__label">CODEXDescription</label>' +
-      '    <textarea class="app-textarea" name="description" placeholder="DescriptionCODEX、CODEX、CODEX…" rows="3"></textarea></div>' +
-      '  <div class="app-field"><label class="app-field__label">CODEX *</label>' +
-      '    <div class="app-code-row">' +
-      '      <button type="button" class="app-btn" data-pick>📍 CODEX</button>' +
-      '      <button type="button" class="app-btn app-btn--ghost" data-locate>📍 CODEX</button>' +
-      '    </div>' +
-      '    <div class="app-loc-row">' +
-      '      <input class="app-input" name="lat" placeholder="CODEX lat" inputmode="decimal">' +
-      '      <input class="app-input" name="lng" placeholder="CODEX lng" inputmode="decimal">' +
-      '    </div>' +
-      '    <p class="app-loc-coords" data-picked-info>CODEX —— CODEX"CODEX"CODEX</p>' +
-      '  </div>' +
-      '  <div class="app-field"><label class="app-field__label">CODEX（CODEX）</label>' +
-      '    <input class="app-input" name="address" placeholder="CODEX：CODEX CODEX"></div>' +
-      '  <div class="app-field"><label class="app-field__label">CODEX（CODEX 6 pics）</label>' +
-      '    <div class="app-upload-grid" data-upload-grid>' +
-      '      <div class="app-upload-box" data-upload-add title="CODEX">＋</div>' +
-      '    </div>' +
-      '    <input type="file" name="images" accept="image/*" multiple hidden data-upload-input>' +
-      '  </div>' +
-      '  <p class="app-error-msg" data-report-error></p>' +
-      '  <button type="submit" class="app-btn app-btn--primary app-btn--block" data-report-submit>Post Sighting</button>' +
-      '</form>';
-
-    // CODEX
-    $$('.app-type-opt', h.body).forEach(function (opt) {
-      opt.addEventListener('click', function () {
-        $$('.app-type-opt', h.body).forEach(function (o) { o.classList.remove('is-active'); });
-        opt.classList.add('is-active');
-      });
-    });
-
-    var grid = $('[data-upload-grid]', h.body);
-    var input = $('[data-upload-input]', h.body);
-
-    $('[data-upload-add]', h.body).addEventListener('click', function () { input.click(); });
-    input.addEventListener('change', function () {
-      var files = Array.prototype.slice.call(input.files || []);
-      // CODEX：CODEX 6 pics，CODEX
-      var remaining = 6 - st.images.length;
-      var accepted = [];
-      var skipped = 0;
-      files.forEach(function (f) {
-        if (accepted.length >= remaining) { skipped++; return; }
-        if (!/^image\//.test(f.type)) { toast('CODEX'); return; }
-        accepted.push(f);
-      });
-      if (skipped > 0) toast('Max uploads 6 picsCODEX');
-      accepted.forEach(function (f) {
-        var reader = new FileReader();
-        reader.onload = function (ev) {
-          st.images.push({ file: f, dataUrl: ev.target.result });
-          renderUploadGrid(grid, input, st);
-        };
-        reader.readAsDataURL(f);
-      });
-      input.value = '';
-    });
-
-    $('[data-pick]', h.body).addEventListener('click', function () {
-      if (st.picked) {
-        st.picked = null;
-        setPickedInfo(h, null);
-        return;
-      }
-      if (!window.spideyMap) { toast('CODEX，CODEX'); return; }
-      startPicking();
-    });
-
-    $('[data-locate]', h.body).addEventListener('click', function () {
-      if (!navigator.geolocation) { toast('CODEX'); return; }
-      navigator.geolocation.getCurrentPosition(function (pos) {
-        var lat = pos.coords.latitude, lng = pos.coords.longitude;
-        st.picked = { lat: lat, lng: lng };
-        setPickedInfo(h, st.picked);
-        toast('CODEX');
-      }, function () { toast('CODEXError，CODEX'); }, { timeout: 8000 });
-    });
-
-    h.overlay.addEventListener('click', function (e) { if (e.target === h.overlay) stopPicking(); });
-
-    $('[data-report-form]', h.body).addEventListener('submit', function (e) {
-      e.preventDefault();
-      submitReport(h);
-    });
-  }
-
-  function renderUploadGrid(grid, input, st) {
-    grid.innerHTML = '';
-    st.images.forEach(function (img, i) {
-      var box = document.createElement('div');
-      box.className = 'app-upload-box';
-      box.innerHTML = '<img src="' + img.dataUrl + '" alt="CODEX">' +
-        '<button type="button" class="app-upload-del" data-del="' + i + '">✕</button>';
-      $('[data-del]', box).addEventListener('click', function () {
-        st.images.splice(i, 1);
-        renderUploadGrid(grid, input, st);
-      });
-      grid.appendChild(box);
-    });
-    if (st.images.length < 6) {
-      var add = document.createElement('div');
-      add.className = 'app-upload-box';
-      add.textContent = '＋';
-      add.title = 'CODEX';
-      add.addEventListener('click', function () { input.click(); });
-      grid.appendChild(add);
-    }
-  }
-
-  function setPickedInfo(h, picked) {
-    var el = $('[data-picked-info]', h.body);
-    var latEl = $('[name=lat]', h.body), lngEl = $('[name=lng]', h.body);
-    if (picked) {
-      el.textContent = 'CODEX：' + picked.lat.toFixed(5) + ', ' + picked.lng.toFixed(5) + '（CODEX"CODEX"CODEX）';
-      latEl.value = picked.lat.toFixed(6);
-      lngEl.value = picked.lng.toFixed(6);
-      $('[data-pick]', h.body).textContent = '🔄 CODEX';
-    } else {
-      el.textContent = 'CODEX —— CODEX"CODEX"CODEX';
-      latEl.value = '';
-      lngEl.value = '';
-      $('[data-pick]', h.body).textContent = '📍 CODEX';
-    }
-  }
-
-  function submitReport(h) {
+  function openReportModal() { }
+    function submitReport(h) {
     var form = $('[data-report-form]', h.body);
     var title = $('[name=title]', form).value.trim();
     var description = $('[name=description]', form).value.trim();
@@ -1092,9 +916,9 @@
     var link = e.target.closest ? e.target.closest('.main-menu__link') : null;
     if (!link) return;
     var action = link.dataset.action;
-    if (action === 'open-auth-modal') { e.preventDefault(); openAuthModal('login'); }
-    else if (action === 'open-user-panel') { e.preventDefault(); openUserPanel(); }
-    else if (action === 'open-records-modal') { e.preventDefault(); openRecordsModal('favorites'); }
+    
+    
+    
   }, false);
 
   /* ==================== CODEX ==================== */
