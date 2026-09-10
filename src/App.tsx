@@ -193,7 +193,7 @@ function OrientationNavbar() {
         {/* Logo */}
         <a href="https://codex-iter.in" className="flex items-center gap-2">
           <div className="p-1">
-            <img src={codexDark} alt="CODEX ITER Logo" className="h-10 w-9" />
+            <img src={codexDark} alt="CODEX ITER Logo" className="h-10 w-9"  loading="lazy" />
           </div>
           <span
             className={`text-2xl font-black tracking-tighter transition-colors text-slate-900`}
@@ -376,7 +376,7 @@ function Footer() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <div className="p-1">
-                <img src={codexLight} alt="CODEX ITER Logo" className="h-10 w-9" />
+                <img src={codexLight} alt="CODEX ITER Logo" className="h-10 w-9"  loading="lazy" />
               </div>
             </motion.div>
             <span className="text-3xl font-black tracking-tighter">CODEX ITER</span>
@@ -732,7 +732,7 @@ export default function App() {
           alt="Background Logo"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75vw] max-w-[750px] pointer-events-none select-none z-0"
           style={{ opacity: 0.35 }}
-        />
+         loading="lazy" />
 
         {/* Legacy Theme Transition Overlay (Original codex-main theme) */}
         <motion.div
@@ -747,7 +747,7 @@ export default function App() {
           }}
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center opacity-30">
-            <img src={codexDark} alt="CODEX" className="h-60 w-60 drop-shadow-xl" />
+            <img src={codexDark} alt="CODEX" className="h-60 w-60 drop-shadow-xl"  loading="lazy" />
             <div className="mt-8 font-mono text-xl font-bold tracking-widest text-[#03045E]">INITIALIZING...</div>
           </div>
         </motion.div>

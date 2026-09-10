@@ -1,274 +1,244 @@
-﻿{
-    "sightings":  [
-                      {
-                          "id":  "usr-1",
-                          "pinType":  "event",
-                          "title":  "Rohit Jain - Software Engineer @ Google",
-                          "description":  "CODEX Alumni. Expert in Agentic AI and full-stack development.",
-                          "lat":  20.2961,
-                          "lng":  85.8245,
-                          "address":  "City Centre, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-2",
-                          "pinType":  "rumored",
-                          "title":  "John Doe - Lead Developer",
-                          "description":  "CODEX Mentor. Guiding the next generation of engineers.",
-                          "lat":  20.2589,
-                          "lng":  85.7806,
-                          "address":  "Khandagiri, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-3",
-                          "pinType":  "confirmed",
-                          "title":  "Jane Smith - Frontend Recruit",
-                          "description":  "New recruit passionate about React and modern web design.",
-                          "lat":  20.2383,
-                          "lng":  85.8338,
-                          "address":  "Lingaraj Temple, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-4",
-                          "pinType":  "event",
-                          "title":  "Alice Brown - Sr. Data Scientist",
-                          "description":  "Alumni working on predictive models and big data architecture.",
-                          "lat":  20.3012,
-                          "lng":  85.8179,
-                          "address":  "Jayadev Vihar, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-5",
-                          "pinType":  "rumored",
-                          "title":  "Bob White - Backend Engineer",
-                          "description":  "Mentor specializing in Node.js, microservices, and databases.",
-                          "lat":  20.2833,
-                          "lng":  85.8167,
-                          "address":  "Master Canteen, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-6",
-                          "pinType":  "confirmed",
-                          "title":  "Charlie Green - UI/UX Designer",
-                          "description":  "Recruit with an eye for stunning aesthetics and user experience.",
-                          "lat":  20.275,
-                          "lng":  85.795,
-                          "address":  "Nayapalli, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-7",
-                          "pinType":  "event",
-                          "title":  "David Black - CTO @ TechStartup",
-                          "description":  "Alumni who founded a successful startup in the fintech space.",
-                          "lat":  20.35,
-                          "lng":  85.82,
-                          "address":  "Patia, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-8",
-                          "pinType":  "rumored",
-                          "title":  "Eve Adams - DevOps Specialist",
-                          "description":  "Mentor teaching Kubernetes, Docker, and CI/CD pipelines.",
-                          "lat":  20.32,
-                          "lng":  85.8,
-                          "address":  "Chandrasekharpur, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-9",
-                          "pinType":  "confirmed",
-                          "title":  "Frank Clark - ML Enthusiast",
-                          "description":  "Recruit exploring deep learning and neural networks.",
-                          "lat":  20.29,
-                          "lng":  85.84,
-                          "address":  "Saheed Nagar, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-10",
-                          "pinType":  "event",
-                          "title":  "Grace Hall - Security Researcher",
-                          "description":  "Alumni focusing on zero-day vulnerabilities and infosec.",
-                          "lat":  20.31,
-                          "lng":  85.83,
-                          "address":  "Vani Vihar, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-11",
-                          "pinType":  "rumored",
-                          "title":  "Harry Jones - Cloud Architect",
-                          "description":  "Mentor helping scale applications on AWS and GCP.",
-                          "lat":  20.26,
-                          "lng":  85.8,
-                          "address":  "Unit 4, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-12",
-                          "pinType":  "confirmed",
-                          "title":  "Ivy King - App Developer",
-                          "description":  "Recruit building cross-platform mobile apps in Flutter.",
-                          "lat":  20.25,
-                          "lng":  85.84,
-                          "address":  "BJB Nagar, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-13",
-                          "pinType":  "event",
-                          "title":  "Jack Lee - Product Manager",
-                          "description":  "Alumni leading product strategy at a top tech firm.",
-                          "lat":  20.34,
-                          "lng":  85.81,
-                          "address":  "Infocity, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-14",
-                          "pinType":  "rumored",
-                          "title":  "Kelly Moore - Fullstack Dev",
-                          "description":  "Mentor with deep knowledge of Next.js and PostgreSQL.",
-                          "lat":  20.28,
-                          "lng":  85.82,
-                          "address":  "Janpath, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      },
-                      {
-                          "id":  "usr-15",
-                          "pinType":  "confirmed",
-                          "title":  "Leo Perez - Blockchain Dev",
-                          "description":  "Recruit experimenting with smart contracts and Web3.",
-                          "lat":  20.27,
-                          "lng":  85.83,
-                          "address":  "Satya Nagar, Bhubaneswar",
-                          "images":  [
-
-                                     ],
-                          "cardThumbImg":  "",
-                          "createdAt":  "2026-09-10 07:31:31",
-                          "author":  {
-                                         "username":  "mockuser",
-                                         "avatar":  "./favicon.png"
-                                     }
-                      }
-                  ]
+{
+  "sightings": [
+    {
+      "id": "usr-1",
+      "pinType": "event",
+      "title": "Rohit Jain - Software Engineer @ Google",
+      "description": "CODEX Alumni. Expert in Agentic AI and full-stack development.",
+      "lat": 20.2961,
+      "lng": 85.8245,
+      "address": "City Centre, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-2",
+      "pinType": "rumored",
+      "title": "John Doe - Lead Developer",
+      "description": "CODEX Mentor. Guiding the next generation of engineers.",
+      "lat": 20.2589,
+      "lng": 85.7806,
+      "address": "Khandagiri, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-3",
+      "pinType": "confirmed",
+      "title": "Jane Smith - Frontend Recruit",
+      "description": "New recruit passionate about React and modern web design.",
+      "lat": 20.2383,
+      "lng": 85.8338,
+      "address": "Lingaraj Temple, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-4",
+      "pinType": "event",
+      "title": "Alice Brown - Sr. Data Scientist",
+      "description": "Alumni working on predictive models and big data architecture.",
+      "lat": 20.3012,
+      "lng": 85.8179,
+      "address": "Jayadev Vihar, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-5",
+      "pinType": "rumored",
+      "title": "Bob White - Backend Engineer",
+      "description": "Mentor specializing in Node.js, microservices, and databases.",
+      "lat": 20.2833,
+      "lng": 85.8167,
+      "address": "Master Canteen, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-6",
+      "pinType": "confirmed",
+      "title": "Charlie Green - UI/UX Designer",
+      "description": "Recruit with an eye for stunning aesthetics and user experience.",
+      "lat": 20.275,
+      "lng": 85.795,
+      "address": "Nayapalli, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-7",
+      "pinType": "event",
+      "title": "David Black - CTO @ TechStartup",
+      "description": "Alumni who founded a successful startup in the fintech space.",
+      "lat": 20.35,
+      "lng": 85.82,
+      "address": "Patia, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-8",
+      "pinType": "rumored",
+      "title": "Eve Adams - DevOps Specialist",
+      "description": "Mentor teaching Kubernetes, Docker, and CI/CD pipelines.",
+      "lat": 20.32,
+      "lng": 85.8,
+      "address": "Chandrasekharpur, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-9",
+      "pinType": "confirmed",
+      "title": "Frank Clark - ML Enthusiast",
+      "description": "Recruit exploring deep learning and neural networks.",
+      "lat": 20.29,
+      "lng": 85.84,
+      "address": "Saheed Nagar, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-10",
+      "pinType": "event",
+      "title": "Grace Hall - Security Researcher",
+      "description": "Alumni focusing on zero-day vulnerabilities and infosec.",
+      "lat": 20.31,
+      "lng": 85.83,
+      "address": "Vani Vihar, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-11",
+      "pinType": "rumored",
+      "title": "Harry Jones - Cloud Architect",
+      "description": "Mentor helping scale applications on AWS and GCP.",
+      "lat": 20.26,
+      "lng": 85.8,
+      "address": "Unit 4, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-12",
+      "pinType": "confirmed",
+      "title": "Ivy King - App Developer",
+      "description": "Recruit building cross-platform mobile apps in Flutter.",
+      "lat": 20.25,
+      "lng": 85.84,
+      "address": "BJB Nagar, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-13",
+      "pinType": "event",
+      "title": "Jack Lee - Product Manager",
+      "description": "Alumni leading product strategy at a top tech firm.",
+      "lat": 20.34,
+      "lng": 85.81,
+      "address": "Infocity, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-14",
+      "pinType": "rumored",
+      "title": "Kelly Moore - Fullstack Dev",
+      "description": "Mentor with deep knowledge of Next.js and PostgreSQL.",
+      "lat": 20.28,
+      "lng": 85.82,
+      "address": "Janpath, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    },
+    {
+      "id": "usr-15",
+      "pinType": "confirmed",
+      "title": "Leo Perez - Blockchain Dev",
+      "description": "Recruit experimenting with smart contracts and Web3.",
+      "lat": 20.27,
+      "lng": 85.83,
+      "address": "Satya Nagar, Bhubaneswar",
+      "images": [],
+      "cardThumbImg": "",
+      "createdAt": "2026-09-10 07:31:31",
+      "author": {
+        "username": "mockuser",
+        "avatar": "./favicon.png"
+      }
+    }
+  ]
 }
