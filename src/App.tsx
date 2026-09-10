@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Instagram, Linkedin, Mail } from "lucide-react";
@@ -7,12 +7,12 @@ import codexDark from "./assets/codex_dark.png";
 import codexLight from "./assets/code_light.png";
 import bgLogo from "./assets/bg_logo.png";
 
-// ─── Reduced-motion guard ────────────────────────────────────────────────────
+// â”€â”€â”€ Reduced-motion guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const prefersReduced =
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// ─── Staggered character reveal ──────────────────────────────────────────────
+// â”€â”€â”€ Staggered character reveal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function AnimatedHeading({ text, className }: { text: string; className?: string }) {
   const chars = text.split("");
   return (
@@ -41,7 +41,7 @@ function AnimatedHeading({ text, className }: { text: string; className?: string
   );
 }
 
-// ─── Typing effect hook ──────────────────────────────────────────────────────
+// â”€â”€â”€ Typing effect hook â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function useTypingEffect(text: string, startDelay: number, speed = 28) {
   const [displayed, setDisplayed] = useState("");
   const [done, setDone] = useState(false);
@@ -70,7 +70,7 @@ function useTypingEffect(text: string, startDelay: number, speed = 28) {
   return { displayed, done };
 }
 
-// ─── Sonar pulse button / link ───────────────────────────────────────────────
+// â”€â”€â”€ Sonar pulse button / link â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function SonarButton({
   children,
   className,
@@ -124,7 +124,40 @@ function SonarButton({
   );
 }
 
-// ─── Orientation Navbar ───────────────────────────────────────────────────────
+// â”€â”€â”€ Floating code fragment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+export function FloatingCode({
+  text,
+  x,
+  y,
+  duration,
+  delay,
+}: {
+  text: string;
+  x: string;
+  y: string;
+  duration: number;
+  delay: number;
+}) {
+  if (prefersReduced) return null;
+  return (
+    <motion.div
+      className="absolute font-mono text-xs font-bold bg-slate-900 text-white px-2 py-1 pointer-events-none select-none"
+      style={{ left: x, top: y }}
+      animate={{ y: [0, -20, 5, -12, 0] }}
+      transition={{
+        duration,
+        repeat: Infinity,
+        delay,
+        ease: "easeInOut",
+        repeatType: "mirror",
+      }}
+    >
+      {text}
+    </motion.div>
+  );
+}
+
+// â”€â”€â”€ Orientation Navbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function OrientationNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -160,7 +193,7 @@ function OrientationNavbar() {
         {/* Logo */}
         <a href="https://codex-iter.in" className="flex items-center gap-2">
           <div className="p-1">
-            <img src={codexDark} alt="CODEX ITER Logo" className="h-10 w-9" />
+            <img src={codexDark} alt="CODEX ITER Logo" className="h-10 w-9"  loading="lazy" />
           </div>
           <span
             className={`text-2xl font-black tracking-tighter transition-colors text-slate-900`}
@@ -267,7 +300,7 @@ function OrientationNavbar() {
   );
 }
 
-// ─── FAQ Item ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ FAQ Item â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function FAQItem({
   question,
   answer,
@@ -330,7 +363,7 @@ function FAQItem({
   );
 }
 
-// ─── Footer ───────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function Footer() {
   return (
     <footer className="bg-background-dark text-black py-20 px-6 border-t-4 border-slate-900">
@@ -343,7 +376,7 @@ function Footer() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <div className="p-1">
-                <img src={codexLight} alt="CODEX ITER Logo" className="h-10 w-9" />
+                <img src={codexLight} alt="CODEX ITER Logo" className="h-10 w-9"  loading="lazy" />
               </div>
             </motion.div>
             <span className="text-3xl font-black tracking-tighter">CODEX ITER</span>
@@ -422,35 +455,35 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto mt-20 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-black font-mono text-sm relative z-10">
         <p className="text-sm text-center">
-          © 2026 CODEX ITER. ALL RIGHTS RESERVED.
+          Â© 2026 CODEX ITER. ALL RIGHTS RESERVED.
         </p>
       </div>
     </footer>
   );
 }
 
-// ─── Static data ──────────────────────────────────────────────────────────────
-const DOMAINS = [
-  {
-    icon: "code_blocks",
-    title: "Web & Systems",
-    desc: "From responsive frontends to scalable cloud-native backends — build real products that ship.",
-  },
-  {
-    icon: "neurology",
-    title: "AI & Machine Learning",
-    desc: "Work on neural architectures, NLP pipelines, and predictive models that solve real problems.",
-  },
-  {
-    icon: "calculate",
-    title: "Competitive Programming",
-    desc: "Master data structures, algorithms, and graph theory to dominate on ICPC and Codeforces.",
-  },
-  {
-    icon: "brush",
-    title: "UI/UX & Product Design",
-    desc: "Craft interfaces and experiences with Figma, design systems, and user research principles.",
-  },
+// â”€â”€â”€ Static data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+export const ACADEMIC_ARCHIVES = [
+  { title: "1st Year Syllabus", desc: "Complete curriculum breakdown and reference material for freshmen.", btn: "Download" },
+  { title: "2nd Year Syllabus", desc: "Advanced engineering modules and core branch subjects.", btn: "Download" },
+  { title: "PYQ Database", desc: "Access the repository of previous year questions across all semesters.", btn: "Access Repository" },
+];
+
+const TECH_TRACK = [
+  { title: "AI / ML", desc: "Artificial Intelligence & Machine Learning" },
+  { title: "IoT & Cybersec", desc: "Internet of Things & Cybersecurity" },
+  { title: "Web & App Dev", desc: "Full-Stack Engineering" },
+  { title: "Cloud & DevOps", desc: "Infrastructure and Deployment" },
+];
+
+const CREATIVE_TRACK = [
+  { title: "Graphic Designers", desc: "UI/UX & Branding" },
+  { title: "Video Editors", desc: "Motion Graphics & Media" },
+  { title: "Content Writers", desc: "Technical & Creative Copy" },
+];
+
+const OPS_TRACK = [
+  { title: "PR, Management & Outreach", desc: "Event coordination, sponsorships, public relations" },
 ];
 
 const STATS = [
@@ -480,47 +513,83 @@ const STATS = [
   },
 ];
 
-const TIMELINE = [
+type TimelinePhase = {
+  phase: string;
+  title: string;
+  date: string;
+  desc: string;
+  icon: string;
+  color: string;
+  accent: string;
+  textAccent: string;
+  isWarning?: boolean;
+};
+
+const TECH_TIMELINE: TimelinePhase[] = [
   {
     phase: "01",
-    title: "Applications Open",
-    date: "Sep 15 – Oct 05, 2026",
-    desc: "Fill out the recruitment form online. Tell us about yourself, your interests, and any projects you've worked on. No GPA cutoff — we hire on curiosity.",
-    icon: "edit_note",
-    color: "bg-background-light",
-    accent: "text-primary",
-    textAccent: "text-slate-900",
-  },
-  {
-    phase: "02",
-    title: "Orientation & Info Session",
-    date: "Oct 08, 2026",
-    desc: "Attend our in-person orientation session. Meet current members, tour the lab, ask questions, and understand what each domain works on day-to-day.",
-    icon: "groups",
-    color: "bg-primary",
-    accent: "text-white",
-    textAccent: "text-white",
-  },
-  {
-    phase: "03",
-    title: "Technical Tasks",
-    date: "Oct 10 – Oct 17, 2026",
-    desc: "Complete a short domain-specific task designed to be educational, not eliminatory. There's no single right answer — we're looking for how you think.",
+    title: "Online Quiz Round",
+    date: "TBA",
+    desc: "Core CS fundamentals",
     icon: "terminal",
     color: "bg-background-light",
     accent: "text-primary",
     textAccent: "text-slate-900",
   },
   {
-    phase: "04",
-    title: "Induction",
-    date: "Oct 22, 2026",
-    desc: "Successful candidates are welcomed into CODEX ITER. You'll be matched with a mentor, onboarded to an active project, and join the family.",
-    icon: "verified",
-    color: "bg-slate-900",
+    phase: "02",
+    title: "Offline Coding Round",
+    date: "TBA",
+    desc: "Algorithmic problem solving",
+    icon: "code",
+    color: "bg-primary",
     accent: "text-white",
     textAccent: "text-white",
   },
+  {
+    phase: "03",
+    title: "Interview Round",
+    date: "TBA",
+    desc: "Technical and HR discussion",
+    icon: "groups",
+    color: "bg-background-light",
+    accent: "text-primary",
+    textAccent: "text-slate-900",
+  }
+];
+
+const NON_TECH_TIMELINE: TimelinePhase[] = [
+  {
+    phase: "00",
+    title: "Portfolio Submission",
+    date: "TBA",
+    desc: "Showcase your past work and creativity.",
+    isWarning: true,
+    icon: "palette",
+    color: "bg-background-light",
+    accent: "text-primary",
+    textAccent: "text-slate-900",
+  },
+  {
+    phase: "01",
+    title: "Quiz Round",
+    date: "TBA",
+    desc: "Aptitude and domain knowledge",
+    icon: "edit_note",
+    color: "bg-primary",
+    accent: "text-white",
+    textAccent: "text-white",
+  },
+  {
+    phase: "02",
+    title: "Interview Round",
+    date: "TBA",
+    desc: "Portfolio review and HR discussion",
+    icon: "groups",
+    color: "bg-background-light",
+    accent: "text-primary",
+    textAccent: "text-slate-900",
+  }
 ];
 
 const FAQS = [
@@ -532,7 +601,7 @@ const FAQS = [
   {
     question: "What is the expected time commitment?",
     answer:
-      "Most members dedicate 6–10 hours per week on average. This includes weekly domain meetings, project work, and optional workshops or events. During hackathon season it may be more — but it's always opt-in based on your bandwidth.",
+      "Most members dedicate 6â€“10 hours per week on average. This includes weekly domain meetings, project work, and optional workshops or events. During hackathon season it may be more â€” but it's always opt-in based on your bandwidth.",
   },
   {
     question: "Can students from all branches apply?",
@@ -552,13 +621,64 @@ const FAQS = [
   {
     question: "What happens after I complete the technical task?",
     answer:
-      "All submitted tasks are reviewed by domain leads within 3–5 days. Every applicant receives feedback regardless of outcome. Selected candidates are invited to an informal conversation before the final induction announcement.",
+      "All submitted tasks are reviewed by domain leads within 3â€“5 days. Every applicant receives feedback regardless of outcome. Selected candidates are invited to an informal conversation before the final induction announcement.",
   },
 ];
 
 
-// ─── Main App Component ────────────────────────────────────────────────────────
+// â”€â”€â”€ Notepad Viewer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function NotepadViewer() {
+  const [activeYear, setActiveYear] = useState("1st Year");
+  
+  const MOCK_SYLLABUS: Record<string, string[]> = {
+    "1st Year": [
+      "Engineering Mathematics - I & II",
+      "Basic Electrical Engineering",
+      "Programming in C / C++",
+      "Engineering Physics / Chemistry",
+      "Communication Skills"
+    ],
+    "2nd Year": [
+      "Data Structures and Algorithms",
+      "Object Oriented Programming (Java)",
+      "Digital Logic Design",
+      "Discrete Mathematics",
+      "Computer Organization & Architecture"
+    ]
+  };
+
+  const years = Object.keys(MOCK_SYLLABUS);
+
+  return (
+    <div className="bg-[#FFF9C4] border-4 border-slate-900 brutalist-shadow flex flex-col h-full relative" style={{ backgroundImage: "repeating-linear-gradient(transparent, transparent 31px, #B3E5FC 31px, #B3E5FC 32px)", backgroundSize: "100% 32px", backgroundPosition: "0 8px" }}>
+      {/* Header/Tabs */}
+      <div className="flex border-b-4 border-slate-900 bg-white flex-wrap">
+        {years.map(year => (
+          <button
+            key={year}
+            onClick={() => setActiveYear(year)}
+            className={`flex-1 py-3 px-2 font-bold font-mono border-r-4 border-slate-900 last:border-r-0 transition-colors whitespace-nowrap ${activeYear === year ? "bg-[#0707f2] text-white" : "bg-white text-slate-900 hover:bg-slate-100"}`}
+          >
+            {year}
+          </button>
+        ))}
+      </div>
+      
+      {/* Content */}
+      <div className="p-8 flex-grow font-mono text-slate-900 text-lg leading-[32px]">
+        <ul className="list-disc pl-6">
+          {MOCK_SYLLABUS[activeYear].map((item, idx) => (
+            <li key={idx} className="mb-0">{item}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// â”€â”€â”€ Main App Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export default function App() {
+  const [activeTrack, setActiveTrack] = useState<'tech' | 'non-tech'>('tech');
   const HERO_TITLE = "CODEX";
   const HERO_SUB1 = "START";
   const HERO_SUB2 = "2026";
@@ -576,7 +696,7 @@ export default function App() {
   return (
     <>
       <Helmet>
-        <title>CODEX ITER | Recruitment 2026 — Orientation Portal</title>
+        <title>CODEX ITER | Recruitment 2026 â€” Orientation Portal</title>
         <meta
           name="description"
           content="Apply to join CODEX ITER Intake 2026. Explore our domains, track the recruitment roadmap, and register for the orientation session."
@@ -589,15 +709,15 @@ export default function App() {
         <meta property="og:title" content="CODEX ITER | Recruitment 2026" />
         <meta
           property="og:description"
-          content="Join CODEX ITER — a decade of technical culture. Recruitment open for Intake 2026."
+          content="Join CODEX ITER â€” a decade of technical culture. Recruitment open for Intake 2026."
         />
         <meta property="og:type" content="website" />
       </Helmet>
 
-      {/* ── NAVBAR ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ NAVBAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <OrientationNavbar />
 
-      {/* ── HERO ───────────────────────────────────────────────────── */}
+      {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         className="relative min-h-[90vh] flex items-center overflow-hidden border-b-4 border-slate-900"
         style={{
@@ -612,7 +732,7 @@ export default function App() {
           alt="Background Logo"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75vw] max-w-[750px] pointer-events-none select-none z-0"
           style={{ opacity: 0.35 }}
-        />
+         loading="lazy" />
 
         {/* Legacy Theme Transition Overlay (Original codex-main theme) */}
         <motion.div
@@ -627,7 +747,7 @@ export default function App() {
           }}
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center opacity-30">
-            <img src={codexDark} alt="CODEX" className="h-60 w-60 drop-shadow-xl" />
+            <img src={codexDark} alt="CODEX" className="h-60 w-60 drop-shadow-xl"  loading="lazy" />
             <div className="mt-8 font-mono text-xl font-bold tracking-widest text-[#03045E]">INITIALIZING...</div>
           </div>
         </motion.div>
@@ -719,7 +839,7 @@ export default function App() {
                 {/* SpideyTracker iframe */}
                 <div className="relative w-full overflow-hidden" style={{ height: "640px" }}>
                   <iframe
-                    src="http://127.0.0.1:8899/"
+                    src="/SpideyTracker/index.html"
                     title="CODEX Tracker"
                     id="codex-tracker-frame"
                     className="absolute inset-0 w-full h-full border-0"
@@ -756,7 +876,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── IMPACT STATS ─────────────────────────────────────────────── */}
+      {/* â”€â”€ IMPACT STATS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="py-24 bg-white border-b-4 border-slate-900">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12">
@@ -768,7 +888,7 @@ export default function App() {
               </h2>
               <div className="space-y-6 text-lg text-slate-700 leading-relaxed font-sans">
                 <p>
-                  CODEX ITER isn't just a club — it's an ecosystem. In ten years we've
+                  CODEX ITER isn't just a club â€” it's an ecosystem. In ten years we've
                   launched startups, won national hackathons, and shipped open-source
                   projects used by thousands.
                 </p>
@@ -804,51 +924,95 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── DOMAINS ──────────────────────────────────────────────────── */}
-      <section
-        id="domains"
-        className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20"
-      >
+      {/* â”€â”€ ACADEMIC ARCHIVES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section className="py-24 bg-white border-b-4 border-slate-900 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <ScrollReveal className="flex items-end justify-between mb-16">
-            <h2 className="text-5xl font-black text-slate-900 uppercase leading-none font-display">
-              What We
-              <br />
-              <span className="text-primary">Master</span>
-            </h2>
-            <div className="hidden md:block text-right font-mono font-bold text-slate-900 opacity-60">
-              // RECRUITMENT WINGS
-            </div>
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold uppercase border-b-4 border-black inline-block mb-8 font-display"> // ACADEMIC_ARCHIVES </h2>
           </ScrollReveal>
-
-          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {DOMAINS.map((domain, i) => (
-              <StaggerItem key={i}>
-                <motion.div
-                  className="bg-white border-4 border-slate-900 p-8 cursor-pointer h-full"
-                  whileHover={{ backgroundColor: "#0707f2", color: "#ffffff" }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <span
-                    className="material-symbols-outlined text-5xl mb-6 text-primary block"
-                    style={{ transition: "color 0.2s" }}
-                  >
-                    {domain.icon}
-                  </span>
-                  <h3 className="text-2xl font-black mb-4 uppercase font-display">
-                    {domain.title}
-                  </h3>
-                  <p className="font-medium opacity-80 text-sm leading-relaxed">
-                    {domain.desc}
-                  </p>
-                </motion.div>
-              </StaggerItem>
-            ))}
+          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <StaggerItem className="lg:col-span-2 h-full">
+              <NotepadViewer />
+            </StaggerItem>
+            
+            <StaggerItem className="lg:col-span-1 h-full">
+              <div className="relative bg-[#C4DFED] border-4 border-slate-900 brutalist-shadow p-8 flex flex-col h-full hover:-translate-y-2 transition-transform duration-200">
+                <div className="absolute top-4 right-4 font-mono text-xl text-slate-900 opacity-20 font-bold">&lt;/&gt;</div>
+                <h3 className="text-2xl font-black mb-4 uppercase font-display text-slate-900">PYQ Database</h3>
+                <p className="font-medium text-slate-800 text-sm leading-relaxed mb-8 flex-grow">Access the repository of previous year questions across all semesters.</p>
+                <button className="bg-[#F53D8A] text-white border-2 border-slate-900 py-3 font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-[4px_4px_0px_0px_#0f172a] active:shadow-none active:translate-y-1 active:translate-x-1">
+                  Access Repository
+                </button>
+              </div>
+            </StaggerItem>
           </StaggerContainer>
         </div>
       </section>
 
-      {/* ── TIMELINE ─────────────────────────────────────────────────── */}
+      {/* â”€â”€ OPEN RECRUITMENT TRACKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section id="domains" className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <ScrollReveal>
+            <h2 className="text-4xl font-black uppercase mb-10 text-slate-900 font-display"> // OPEN_RECRUITMENT_TRACKS </h2>
+          </ScrollReveal>
+
+          {/* TECH TRACK */}
+          <div className="mb-16">
+            <ScrollReveal>
+              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: TECH ]</h3>
+            </ScrollReveal>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {TECH_TRACK.map((role, i) => (
+                <StaggerItem key={i} className="h-full">
+                  <div className="bg-white border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
+                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
+                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
+                    <p className="text-sm font-medium text-slate-700">{role.desc}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+
+          {/* CREATIVE TRACK */}
+          <div className="mb-16">
+            <ScrollReveal>
+              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: CREATIVE & MEDIA ]</h3>
+            </ScrollReveal>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {CREATIVE_TRACK.map((role, i) => (
+                <StaggerItem key={i} className="h-full">
+                  <div className="bg-[#FCB6D1] border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
+                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
+                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
+                    <p className="text-sm font-medium text-slate-800">{role.desc}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+
+          {/* OPS TRACK */}
+          <div>
+            <ScrollReveal>
+              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: OPERATIONS ]</h3>
+            </ScrollReveal>
+            <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {OPS_TRACK.map((role, i) => (
+                <StaggerItem key={i} className="lg:col-span-1 h-full">
+                  <div className="bg-[#C4DFED] border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
+                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
+                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
+                    <p className="text-sm font-medium text-slate-800">{role.desc}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* â”€â”€ TIMELINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         id="timeline"
         className="py-24 bg-white border-b-4 border-slate-900 scroll-mt-20"
@@ -867,12 +1031,28 @@ export default function App() {
             </div>
           </ScrollReveal>
 
+          {/* Neo-Brutalist Toggle Tabs */}
+          <div className="flex flex-col sm:flex-row gap-6 mb-12">
+            <button 
+              onClick={() => setActiveTrack('tech')}
+              className={`flex-1 font-mono text-xl font-bold uppercase tracking-widest border-4 border-slate-900 py-4 px-6 transition-all ${activeTrack === 'tech' ? 'bg-[#F53D8A] text-white translate-x-1 translate-y-1 shadow-none' : 'bg-[#C4DFED] text-slate-900 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]'}`}
+            >
+              [ TECH_TRACK ]
+            </button>
+            <button 
+              onClick={() => setActiveTrack('non-tech')}
+              className={`flex-1 font-mono text-xl font-bold uppercase tracking-widest border-4 border-slate-900 py-4 px-6 transition-all ${activeTrack === 'non-tech' ? 'bg-[#F53D8A] text-white translate-x-1 translate-y-1 shadow-none' : 'bg-[#C4DFED] text-slate-900 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_rgba(0,0,0,1)]'}`}
+            >
+              [ NON_TECH_TRACK ]
+            </button>
+          </div>
+
           <div className="relative">
             {/* Vertical connector */}
             <div className="hidden md:block absolute left-[calc(2.5rem_-_2px)] top-0 bottom-0 w-1 bg-slate-900" />
 
-            <StaggerContainer className="space-y-8">
-              {TIMELINE.map((phase, i) => (
+            <StaggerContainer className="space-y-8" key={activeTrack}>
+              {(activeTrack === 'tech' ? TECH_TIMELINE : NON_TECH_TIMELINE).map((phase, i) => (
                 <StaggerItem key={i}>
                   <div className="flex gap-6 md:gap-10 items-start">
                     {/* Phase badge */}
@@ -914,6 +1094,11 @@ export default function App() {
                           {phase.date}
                         </span>
                       </div>
+                      {phase.isWarning && (
+                        <div className="mb-4 mt-2">
+                          <span className="text-xs bg-[#F53D8A] text-white px-2 py-1 font-mono border border-black inline-block shadow-[2px_2px_0px_rgba(0,0,0,1)]">REQUIRED FOR DESIGNERS & VIDEO EDITORS</span>
+                        </div>
+                      )}
                       <p className="text-slate-700 font-medium leading-relaxed text-sm">
                         {phase.desc}
                       </p>
@@ -926,7 +1111,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── FAQ ──────────────────────────────────────────────────────── */}
+      {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         id="faq"
         className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20"
@@ -955,12 +1140,12 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── FINAL CTA ────────────────────────────────────────────────── */}
+      {/* â”€â”€ FINAL CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <ScrollReveal>
         <section id="register" className="bg-primary py-24 scroll-mt-20 relative">
           <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
             <div className="inline-block bg-white text-primary px-4 py-1 font-bold mb-8 text-sm uppercase tracking-widest font-mono brutalist-shadow border-2 border-slate-900">
-              Applications Open — Intake 2026
+              Applications Open â€” Intake 2026
             </div>
             <h2 className="text-6xl md:text-8xl font-black text-white mb-8 uppercase leading-none italic font-display">
               Join The Codex.
@@ -991,8 +1176,10 @@ export default function App() {
         </section>
       </ScrollReveal>
 
-      {/* ── FOOTER ───────────────────────────────────────────────────── */}
+      {/* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <Footer />
     </>
   );
 }
+
+
