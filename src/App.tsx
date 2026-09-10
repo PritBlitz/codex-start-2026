@@ -6,9 +6,6 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "./components/animat
 import codexDark from "./assets/codex_dark.png";
 import codexLight from "./assets/code_light.png";
 import bgLogo from "./assets/bg_logo.png";
-import heroCenterWeb from "./assets/hero_center_web.png";
-import hangingSpidey from "./assets/hanging_spidey.png";
-import heroBg from "./assets/hero_bg.png";
 
 // â”€â”€â”€ Reduced-motion guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 const prefersReduced =
@@ -128,7 +125,7 @@ function SonarButton({
 }
 
 // â”€â”€â”€ Floating code fragment â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-function FloatingCode({
+export function FloatingCode({
   text,
   x,
   y,
@@ -466,7 +463,7 @@ function Footer() {
 }
 
 // â”€â”€â”€ Static data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-const ACADEMIC_ARCHIVES = [
+export const ACADEMIC_ARCHIVES = [
   { title: "1st Year Syllabus", desc: "Complete curriculum breakdown and reference material for freshmen.", btn: "Download" },
   { title: "2nd Year Syllabus", desc: "Advanced engineering modules and core branch subjects.", btn: "Download" },
   { title: "PYQ Database", desc: "Access the repository of previous year questions across all semesters.", btn: "Access Repository" },
@@ -1184,4 +1181,5 @@ export default function App() {
     </>
   );
 }
+
 

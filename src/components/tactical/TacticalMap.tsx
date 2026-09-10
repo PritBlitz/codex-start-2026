@@ -27,7 +27,7 @@ const markerFilter = (s: MarkerState) =>
 const stateOrder: MarkerState[] = ["neutral", "friendly", "hostile", "target"];
 
 export default function TacticalMap() {
-  const [config, setConfig] = useState<Config>(defaultConfig);
+  const [config] = useState<Config>(defaultConfig);
   const [markers, setMarkers] = useState<Marker[]>(initialMarkers);
   const [activeProfile, setActiveProfile] = useState(config.profiles[0]);
   const [activeAction, setActiveAction] = useState<string | null>("TERRAIN");
