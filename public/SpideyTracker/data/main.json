@@ -30,12 +30,12 @@
         "title": "Legend",
         "ariaLabel": "Map Legend",
         "closeAriaLabel": "Close Legend",
-        "intro": "Interact with the map, view CODEX Sightings from all over the world. Here is a legend of all features. Have fun, and start tracking!",
+        "intro": "Welcome to CODEX Start. Explore the community, build your skills, and begin your journey.",
         "featuresAriaLabel": "Legend features",
         "items": {
-          "confirmed": "Confirmed Sightings",
-          "reported": "Rumored Sightings",
-          "messageCenter": "Message Center",
+          "confirmed": "Community Updates",
+          "reported": "Creative Tracks",
+          "messageCenter": "Messages",
           "audio": "Sound Toggle",
           "neighborhood": "Locate Your Neighborhood",
           "globalMap": "Global Map"
@@ -44,8 +44,8 @@
       "preMap": {},
       "soundOptIn": {
         "ariaLabel": "Sound Preferences",
-        "headline": "Welcome to CODEX Tracker.\nInteract with the map, view\nall over the world\nCODEX Sightings.",
-        "continueLabel": "Select your settings and start tracking",
+        "headline": "Welcome to CODEX Start.\nBuild, learn, and begin your journey.",
+        "continueLabel": "Continue",
         "soundOnText": "Sound On",
         "soundOffText": "Sound Off"
       },

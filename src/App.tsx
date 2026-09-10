@@ -171,6 +171,8 @@ function OrientationNavbar() {
   const links = [
     { href: "#domains", label: "Domains" },
     { href: "#timeline", label: "Timeline" },
+    { href: "#syllabus", label: "Syllabus" },
+    { href: "#pyq", label: "PYQ" },
     { href: "#faq", label: "FAQ" },
   ];
 
@@ -471,19 +473,16 @@ export const ACADEMIC_ARCHIVES = [
 
 const TECH_TRACK = [
   { title: "AI / ML", desc: "Artificial Intelligence & Machine Learning" },
-  { title: "IoT & Cybersec", desc: "Internet of Things & Cybersecurity" },
-  { title: "Web & App Dev", desc: "Full-Stack Engineering" },
-  { title: "Cloud & DevOps", desc: "Infrastructure and Deployment" },
+  { title: "IoT & Cybersecurity", desc: "Connected systems, security, and smart hardware" },
+  { title: "Web Dev & App Dev", desc: "Modern web products and mobile experiences" },
+  { title: "Data Science", desc: "Analytics, insights, and intelligent problem solving" },
 ];
 
-const CREATIVE_TRACK = [
-  { title: "Graphic Designers", desc: "UI/UX & Branding" },
-  { title: "Video Editors", desc: "Motion Graphics & Media" },
-  { title: "Content Writers", desc: "Technical & Creative Copy" },
-];
-
-const OPS_TRACK = [
-  { title: "PR, Management & Outreach", desc: "Event coordination, sponsorships, public relations" },
+const NON_TECH_TRACK = [
+  { title: "Graphic Designers", desc: "Brand identity, posters, marketing visuals, and UI assets" },
+  { title: "Video Editors", desc: "Editing, motion graphics, and visual storytelling" },
+  { title: "Content Writers", desc: "Creative and technical storytelling for the club" },
+  { title: "PR, Management & Outreach", desc: "Events, sponsorships, communication, and community building" },
 ];
 
 const STATS = [
@@ -530,7 +529,7 @@ const TECH_TIMELINE: TimelinePhase[] = [
     phase: "01",
     title: "Online Quiz Round",
     date: "TBA",
-    desc: "Core CS fundamentals",
+    desc: "A timed aptitude and logic-based screening to assess your core technical foundation.",
     icon: "terminal",
     color: "bg-background-light",
     accent: "text-primary",
@@ -540,7 +539,7 @@ const TECH_TIMELINE: TimelinePhase[] = [
     phase: "02",
     title: "Offline Coding Round",
     date: "TBA",
-    desc: "Algorithmic problem solving",
+    desc: "Hands-on algorithmic problem solving and implementation under real-time conditions.",
     icon: "code",
     color: "bg-primary",
     accent: "text-white",
@@ -550,7 +549,7 @@ const TECH_TIMELINE: TimelinePhase[] = [
     phase: "03",
     title: "Interview Round",
     date: "TBA",
-    desc: "Technical and HR discussion",
+    desc: "Technical discussion, communication assessment, and final selection interview.",
     icon: "groups",
     color: "bg-background-light",
     accent: "text-primary",
@@ -563,7 +562,7 @@ const NON_TECH_TIMELINE: TimelinePhase[] = [
     phase: "00",
     title: "Portfolio Submission",
     date: "TBA",
-    desc: "Showcase your past work and creativity.",
+    desc: "Required for designers and video editors to showcase their previous work and creative potential.",
     isWarning: true,
     icon: "palette",
     color: "bg-background-light",
@@ -574,7 +573,7 @@ const NON_TECH_TIMELINE: TimelinePhase[] = [
     phase: "01",
     title: "Quiz Round",
     date: "TBA",
-    desc: "Aptitude and domain knowledge",
+    desc: "Aptitude, domain awareness, and creativity-focused screening for non-technical roles.",
     icon: "edit_note",
     color: "bg-primary",
     accent: "text-white",
@@ -584,7 +583,7 @@ const NON_TECH_TIMELINE: TimelinePhase[] = [
     phase: "02",
     title: "Interview Round",
     date: "TBA",
-    desc: "Portfolio review and HR discussion",
+    desc: "Portfolio review and personal interaction to evaluate fit, creativity, and collaboration.",
     icon: "groups",
     color: "bg-background-light",
     accent: "text-primary",
@@ -594,83 +593,129 @@ const NON_TECH_TIMELINE: TimelinePhase[] = [
 
 const FAQS = [
   {
-    question: "Do I need prior coding experience to apply?",
-    answer:
-      "No prior experience is required for most of our wings. We value curiosity and a willingness to learn over existing skill level. That said, competitive programming and AI/ML wings may expect some foundational comfort with programming logic. Our orientation session will help you find the right fit.",
+    question: "Who is eligible?",
+    answer: "All students from first and second year only are eligible for participation.",
   },
   {
-    question: "What is the expected time commitment?",
-    answer:
-      "Most members dedicate 6â€“10 hours per week on average. This includes weekly domain meetings, project work, and optional workshops or events. During hackathon season it may be more â€” but it's always opt-in based on your bandwidth.",
+    question: "How difficult is the entrance test?",
+    answer: "The difficulty level has been curated keeping in mind the skills and syllabus of first and second year students.",
   },
   {
-    question: "Can students from all branches apply?",
-    answer:
-      "Absolutely. CODEX ITER is open to all undergraduate students of ITER, regardless of branch. We have members from CSE, ECE, Mechanical, Civil, and beyond. Diverse perspectives make our work stronger.",
+    question: "I am an ECE student. Can I participate?",
+    answer: "Programming skills are a must at Codex, but there is no restriction for branch.",
   },
   {
-    question: "Will I work on real projects or just learn theory?",
-    answer:
-      "Real projects, always. From day one you'll be contributing to active repositories, collaborating with seniors, and shipping work that may go live on our platform or in partner organizations. Theory is delivered through workshops alongside hands-on execution.",
+    question: "Do I need my own laptop for participation?",
+    answer: "Yes, participants must use their own laptops for the 1st technical round.",
   },
   {
-    question: "Is there a fee to join CODEX ITER?",
-    answer:
-      "There is no fee to apply or join. CODEX ITER is a student-run, merit-based organization. Events and workshops hosted throughout the year are free for all members.",
+    question: "What topics do I need to know?",
+    answer: "Please refer to the topics page.",
   },
   {
-    question: "What happens after I complete the technical task?",
-    answer:
-      "All submitted tasks are reviewed by domain leads within 3â€“5 days. Every applicant receives feedback regardless of outcome. Selected candidates are invited to an informal conversation before the final induction announcement.",
+    question: "What programming languages are allowed?",
+    answer: "You can use any programming language, but second years must be proficient in Java.",
+  },
+  {
+    question: "If I don't have any coding skills what do I do?",
+    answer: "You can apply for non-tech roles such as designers and editors but should have a drive to learn code at the same time.",
   },
 ];
 
+const SYLLABUS_BY_YEAR: Record<string, Array<{ topic: string; level: string }>> = {
+  "First Year": [
+    { topic: "Datatypes & Variables", level: "Advanced" },
+    { topic: "Conditional Statements", level: "Advanced" },
+    { topic: "Operators & Modifiers", level: "Advanced" },
+    { topic: "Loops", level: "Intermediate" },
+    { topic: "Strings & Arrays", level: "Intermediate" },
+    { topic: "Classes & Objects", level: "Beginner" },
+    { topic: "Recursion", level: "Beginner" },
+  ],
+  "Second Year": [
+    { topic: "Core Java", level: "Advanced" },
+    { topic: "Arrays & Strings", level: "Advanced" },
+    { topic: "Classes & Objects", level: "Advanced" },
+    { topic: "Data Structures - LinkedList, Stacks, Queues, Trees", level: "Intermediate" },
+    { topic: "Algorithms", level: "Beginner" },
+  ],
+};
+
+const RULES = [
+  "We here at Codex are very passionate about our coding prowess. We leave no opportunity to flaunt our coding skills to others.",
+  "Once you get yourself registered, join the group for further details so you don't miss any updates.",
+  "Each round is an elimination round, so if you are really interested in joining us, you need to appear and perform in every round.",
+  "Ranking of individuals is based on the platform leaderboard and discussion with the judging panel.",
+  "Winners and positions on the leaderboard may change if someone develops an exceptional and highly optimized logic within the time limit.",
+  "AI tools, tab switching, and any external assistance are strictly prohibited during the Quiz Round. Violations may lead to immediate disqualification.",
+  "There are some restrictions for and during the test process, such as the use of AI tools and auto-code completions, which are to be totally avoided as the code may be reviewed afterwards and may lead to cancellation of the candidature.",
+  "No one would be entertained as a special case if they missed any updates; the organizing team is not responsible for them."
+];
 
 // â”€â”€â”€ Notepad Viewer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function NotepadViewer() {
-  const [activeYear, setActiveYear] = useState("1st Year");
-  
-  const MOCK_SYLLABUS: Record<string, string[]> = {
-    "1st Year": [
-      "Engineering Mathematics - I & II",
-      "Basic Electrical Engineering",
-      "Programming in C / C++",
-      "Engineering Physics / Chemistry",
-      "Communication Skills"
-    ],
-    "2nd Year": [
-      "Data Structures and Algorithms",
-      "Object Oriented Programming (Java)",
-      "Digital Logic Design",
-      "Discrete Mathematics",
-      "Computer Organization & Architecture"
-    ]
-  };
-
-  const years = Object.keys(MOCK_SYLLABUS);
+  const [activeYear, setActiveYear] = useState("First Year");
+  const years = Object.keys(SYLLABUS_BY_YEAR);
 
   return (
-    <div className="bg-[#FFF9C4] border-4 border-slate-900 brutalist-shadow flex flex-col h-full relative" style={{ backgroundImage: "repeating-linear-gradient(transparent, transparent 31px, #B3E5FC 31px, #B3E5FC 32px)", backgroundSize: "100% 32px", backgroundPosition: "0 8px" }}>
-      {/* Header/Tabs */}
+    <div
+      className="bg-[#FFF9C4] border-4 border-slate-900 brutalist-shadow flex flex-col h-full relative"
+      style={{
+        backgroundImage: "repeating-linear-gradient(transparent, transparent 31px, #B3E5FC 31px, #B3E5FC 32px)",
+        backgroundSize: "100% 32px",
+        backgroundPosition: "0 8px",
+      }}
+    >
       <div className="flex border-b-4 border-slate-900 bg-white flex-wrap">
-        {years.map(year => (
+        {years.map((year) => (
           <button
             key={year}
             onClick={() => setActiveYear(year)}
-            className={`flex-1 py-3 px-2 font-bold font-mono border-r-4 border-slate-900 last:border-r-0 transition-colors whitespace-nowrap ${activeYear === year ? "bg-[#0707f2] text-white" : "bg-white text-slate-900 hover:bg-slate-100"}`}
+            className={`flex-1 py-3 px-2 font-bold font-mono border-r-4 border-slate-900 last:border-r-0 transition-colors whitespace-nowrap ${
+              activeYear === year ? "bg-[#0707f2] text-white" : "bg-white text-slate-900 hover:bg-slate-100"
+            }`}
           >
             {year}
           </button>
         ))}
       </div>
-      
-      {/* Content */}
-      <div className="p-8 flex-grow font-mono text-slate-900 text-lg leading-[32px]">
-        <ul className="list-disc pl-6">
-          {MOCK_SYLLABUS[activeYear].map((item, idx) => (
-            <li key={idx} className="mb-0">{item}</li>
-          ))}
-        </ul>
+
+      <div className="p-8 md:p-10 flex-grow font-mono text-slate-900 leading-[32px]">
+        <div className="mb-6 flex items-center justify-between gap-3 flex-wrap">
+          <div className="font-bold uppercase tracking-[0.18em] text-xs text-slate-700">
+            What I Need to Know
+          </div>
+          <div className="bg-white border-2 border-slate-900 px-3 py-1 text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">
+            {activeYear}
+          </div>
+        </div>
+
+        <div className="overflow-hidden border-2 border-slate-900 bg-white">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-[#C4DFED] border-b-2 border-slate-900">
+                <th className="px-4 py-3 text-left text-[11px] font-black uppercase tracking-[0.18em] text-slate-900">
+                  Topic
+                </th>
+                <th className="px-4 py-3 text-left text-[11px] font-black uppercase tracking-[0.18em] text-slate-900">
+                  Level
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {SYLLABUS_BY_YEAR[activeYear].map((item, idx) => (
+                <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-[#F5F7FF]"}>
+                  <td className="px-4 py-3 text-base font-medium text-slate-800 border-t-2 border-slate-900/60">
+                    {item.topic}
+                  </td>
+                  <td className="px-4 py-3 text-base font-black text-primary border-t-2 border-slate-900/60 uppercase tracking-wide">
+                    {item.level}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
@@ -719,7 +764,7 @@ export default function App() {
 
       {/* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
-        className="relative min-h-[90vh] flex items-center overflow-hidden border-b-4 border-slate-900"
+        className="relative min-h-[72vh] flex items-center overflow-hidden border-b-4 border-slate-900"
         style={{
           backgroundImage: "radial-gradient(circle, rgba(255, 255, 255, 0.6) 2.5px, transparent 2.5px), linear-gradient(135deg, #FCB6D1 0%, #B3E5FC 25%, #B3E5FC 100%)",
           backgroundSize: "28px 28px, cover",
@@ -752,7 +797,7 @@ export default function App() {
           </div>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center w-full py-20 relative z-10">
+        <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center w-full py-10 relative z-10">
           {/* Left: copy */}
           <div className="relative z-10">
             <motion.div
@@ -761,23 +806,52 @@ export default function App() {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="inline-block bg-[#C4DFED] text-slate-900 px-4 py-1 font-bold mb-6 text-sm uppercase tracking-widest font-mono"
             >
-              RECRUITMENT // INTAKE 2026
+              RECRUITMENT // HIRING 2026
             </motion.div>
 
-            <h1 className="text-5xl md:text-[5rem] font-black leading-[1.1] text-white drop-shadow-md mb-6 font-display py-2">
-              <span className="text-[#0707F2]">
-                <AnimatedHeading text={HERO_TITLE} />
+            <div className="mb-5 flex flex-wrap items-center gap-3 uppercase text-[0.62rem] md:text-[0.74rem] font-black tracking-[0.22em] text-slate-900">
+              <span className="inline-flex items-center rounded-full border-2 border-slate-900 bg-white px-3 py-1 shadow-[4px_4px_0_#0707F2]">
+                recruitment 2026
               </span>
-              {" "}
-              <br />
-              <span className="text-[#0707F2] italic drop-shadow-none">
-                <AnimatedHeading text={HERO_SUB1} />
-              </span>{" "}
-              <br />
-              <AnimatedHeading text={HERO_SUB2} />
-            </h1>
+              <span className="inline-flex items-center rounded-full border-2 border-slate-900 bg-[#C4DFED] px-3 py-1 shadow-[4px_4px_0_#F53D8A]">
+                build • create • grow
+              </span>
+            </div>
 
-            <p className="text-xl text-slate-900 max-w-lg mb-10 leading-relaxed font-sans min-h-[80px]">
+            <div className="relative mb-6">
+              <div className="absolute -left-8 top-10 h-24 w-24 rounded-full bg-[#F53D8A]/30 blur-3xl" />
+              <div className="absolute right-4 top-0 h-20 w-20 rounded-full bg-[#0707F2]/20 blur-3xl" />
+
+              <h1 className="relative font-display leading-[0.7] tracking-[-0.08em] text-white uppercase">
+                <div className="flex items-end gap-3 md:gap-5" style={{ transform: "skewY(-2deg)" }}>
+                  <span className="relative inline-block text-[#0707F2] text-[3.2rem] md:text-[6.8rem] font-black drop-shadow-[9px_9px_0_rgba(245,61,138,0.25)]">
+                    <AnimatedHeading text={HERO_TITLE} />
+                  </span>
+                </div>
+
+                <div className="mt-2 flex items-center gap-2 md:gap-3 uppercase" style={{ transform: "skewY(-2deg)" }}>
+                  <span className="relative inline-block text-[#0707F2] text-[2.5rem] md:text-[5.2rem] font-black italic leading-none drop-shadow-[7px_7px_0_rgba(245,61,138,0.2)]">
+                    <AnimatedHeading text={HERO_SUB1} />
+                  </span>
+
+                  <div className="flex items-center -ml-1 md:-ml-2">
+                    <span className="relative inline-flex items-center justify-center rounded-xl border-2 border-slate-900 bg-[#F53D8A] px-2 py-1 text-[1.35rem] md:text-[2.7rem] font-black text-white shadow-[5px_5px_0_#0707F2] leading-none">
+                      20
+                    </span>
+                    <span className="flex items-center justify-center -mx-1.5 md:-mx-1.5">
+                      <span className="h-2 w-2 rounded-full bg-slate-900" />
+                      <span className="h-[0.18rem] w-4 md:w-5 rounded-full bg-slate-900" />
+                      <span className="h-2 w-2 rounded-full bg-slate-900" />
+                    </span>
+                    <span className="relative inline-flex items-center justify-center rounded-xl border-2 border-slate-900 bg-[#C4DFED] px-2 py-1 text-[1.35rem] md:text-[2.7rem] font-black text-[#0707F2] shadow-[5px_5px_0_#F53D8A] leading-none -ml-1.5 md:-ml-2">
+                      26
+                    </span>
+                  </div>
+                </div>
+              </h1>
+            </div>
+
+            <p className="text-lg text-slate-900 max-w-lg mb-8 leading-relaxed font-sans min-h-[52px]">
               {displayed}
               {!done && (
                 <motion.span
@@ -795,7 +869,7 @@ export default function App() {
               transition={{ duration: 0.5, delay: ctaDelay / 1000 }}
             >
               <SonarButton
-                href="#register"
+                href="https://forms.gle/exrCRqSNMF9gfWuF9"
                 className="bg-[#F53D8A] text-white px-8 py-4 text-lg font-black border-2 border-slate-900 font-display tracking-widest cursor-pointer uppercase inline-block text-center hover:brightness-110 transition-all"
               >
                 Register Now
@@ -888,14 +962,12 @@ export default function App() {
               </h2>
               <div className="space-y-6 text-lg text-slate-700 leading-relaxed font-sans">
                 <p>
-                  CODEX ITER isn't just a club â€” it's an ecosystem. In ten years we've
-                  launched startups, won national hackathons, and shipped open-source
-                  projects used by thousands.
+                  CODEX ITER isn't just a club — it's a community of builders. We turn
+                  ideas into projects, projects into experience, and experience into impact.
                 </p>
                 <p>
-                  When you join, you inherit a decade of collective knowledge, a
-                  senior-to-junior mentorship culture, and direct access to builders
-                  who are actively shipping.
+                  Join a culture of mentorship, execution, and innovation where senior and
+                  junior members grow together and build the future side by side.
                 </p>
               </div>
             </ScrollReveal>
@@ -924,90 +996,59 @@ export default function App() {
         </div>
       </section>
 
-      {/* â”€â”€ ACADEMIC ARCHIVES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="py-24 bg-white border-b-4 border-slate-900 scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+{/* â”€â”€ ACADEMIC ARCHIVES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section id="syllabus" className="py-24 bg-white border-b-4 border-slate-900 scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold uppercase border-b-4 border-black inline-block mb-8 font-display"> // ACADEMIC_ARCHIVES </h2>
-          </ScrollReveal>
-          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <StaggerItem className="lg:col-span-2 h-full">
-              <NotepadViewer />
-            </StaggerItem>
-            
-            <StaggerItem className="lg:col-span-1 h-full">
-              <div className="relative bg-[#C4DFED] border-4 border-slate-900 brutalist-shadow p-8 flex flex-col h-full hover:-translate-y-2 transition-transform duration-200">
-                <div className="absolute top-4 right-4 font-mono text-xl text-slate-900 opacity-20 font-bold">&lt;/&gt;</div>
-                <h3 className="text-2xl font-black mb-4 uppercase font-display text-slate-900">PYQ Database</h3>
-                <p className="font-medium text-slate-800 text-sm leading-relaxed mb-8 flex-grow">Access the repository of previous year questions across all semesters.</p>
-                <button className="bg-[#F53D8A] text-white border-2 border-slate-900 py-3 font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-[4px_4px_0px_0px_#0f172a] active:shadow-none active:translate-y-1 active:translate-x-1">
-                  Access Repository
-                </button>
+            <div className="mb-10 flex items-center justify-between gap-4 flex-wrap">
+              <h2 className="text-3xl font-bold uppercase border-b-4 border-black inline-block font-display"> // ACADEMIC_ARCHIVES </h2>
+              <div className="inline-block bg-[#C4DFED] text-slate-900 px-3 py-1 font-mono text-xs font-black uppercase tracking-[0.2em] border-2 border-slate-900">
+                1st & 2nd Year
               </div>
+            </div>
+          </ScrollReveal>
+
+          <StaggerContainer className="grid grid-cols-1">
+            <StaggerItem className="h-full">
+              <NotepadViewer />
             </StaggerItem>
           </StaggerContainer>
         </div>
       </section>
 
-      {/* â”€â”€ OPEN RECRUITMENT TRACKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section id="domains" className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+      {/* â”€â”€ PRACTICE MAKES PERFECT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section id="pyq" className="py-14 bg-background-light border-b-4 border-slate-900 scroll-mt-20">
+        <div className="max-w-4xl mx-auto px-5 relative z-10">
           <ScrollReveal>
-            <h2 className="text-4xl font-black uppercase mb-10 text-slate-900 font-display"> // OPEN_RECRUITMENT_TRACKS </h2>
+            <div className="mb-8 text-center">
+              <div className="inline-block bg-white text-slate-900 px-3 py-1 font-bold mb-4 text-xs uppercase tracking-widest font-mono border-2 border-slate-900">
+                Practice Makes Perfect
+              </div>
+              <h2 className="text-3xl font-black uppercase text-slate-900 font-display leading-none mb-4">
+                Previous Year Questions
+              </h2>
+              <p className="text-sm text-slate-700 max-w-2xl mx-auto leading-relaxed">
+                Get a head start on your preparation by checking past questions and understanding the exam pattern and difficulty level.
+              </p>
+            </div>
           </ScrollReveal>
 
-          {/* TECH TRACK */}
-          <div className="mb-16">
-            <ScrollReveal>
-              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: TECH ]</h3>
-            </ScrollReveal>
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {TECH_TRACK.map((role, i) => (
-                <StaggerItem key={i} className="h-full">
-                  <div className="bg-white border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
-                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
-                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
-                    <p className="text-sm font-medium text-slate-700">{role.desc}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-
-          {/* CREATIVE TRACK */}
-          <div className="mb-16">
-            <ScrollReveal>
-              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: CREATIVE & MEDIA ]</h3>
-            </ScrollReveal>
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {CREATIVE_TRACK.map((role, i) => (
-                <StaggerItem key={i} className="h-full">
-                  <div className="bg-[#FCB6D1] border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
-                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
-                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
-                    <p className="text-sm font-medium text-slate-800">{role.desc}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
-
-          {/* OPS TRACK */}
-          <div>
-            <ScrollReveal>
-              <h3 className="font-mono font-bold text-slate-900 mb-6 bg-slate-200 inline-block px-3 py-1 border-2 border-slate-900">[ CATEGORY: OPERATIONS ]</h3>
-            </ScrollReveal>
-            <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {OPS_TRACK.map((role, i) => (
-                <StaggerItem key={i} className="lg:col-span-1 h-full">
-                  <div className="bg-[#C4DFED] border-4 border-slate-900 p-6 flex flex-col h-full brutalist-shadow relative overflow-hidden group hover:-translate-y-1 transition-transform duration-200">
-                    <span className="inline-block text-xs bg-slate-900 text-white px-2 py-1 font-mono uppercase tracking-widest mb-4 w-max border-2 border-slate-900">STATUS: HIRING</span>
-                    <h4 className="text-xl font-black uppercase font-display text-slate-900 mb-2">{role.title}</h4>
-                    <p className="text-sm font-medium text-slate-800">{role.desc}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
+          <div className="bg-white border-4 border-slate-900 brutalist-shadow p-5 md:p-7 text-center">
+            <div className="text-4xl mb-3">📝</div>
+            <h3 className="text-2xl font-black uppercase font-display text-slate-900 mb-3">Access Previous Year Questions</h3>
+            <p className="text-slate-700 text-sm leading-relaxed mb-5 max-w-xl mx-auto">
+              Review past questions to understand the kind of problems and coding challenges you'll face.
+            </p>
+            <a
+              href="https://docs.google.com/document/d/1OROKDAf0lzKPN0jPLqQBbtfYQT4WoBi0/edit?usp=sharing&ouid=113281512485015431729&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#F53D8A] text-white px-5 py-3 text-base font-black border-2 border-slate-900 font-display tracking-widest uppercase cursor-pointer hover:brightness-110 transition-all"
+            >
+              View PYQ →
+            </a>
+            <p className="mt-5 text-sm font-bold text-slate-700">💡 Tip: Practice these questions multiple times to build confidence.</p>
+            <p className="mt-4 text-[11px] font-bold text-slate-900 uppercase tracking-wide">🎯 Disclaimer: The Syllabus for Codex Start changes each year.</p>
           </div>
         </div>
       </section>
@@ -1031,6 +1072,15 @@ export default function App() {
             </div>
           </ScrollReveal>
 
+          <div className="mb-6 grid gap-3 sm:grid-cols-2">
+            <div className="bg-[#C4DFED] border-4 border-slate-900 p-3 font-mono text-xs font-black uppercase tracking-[0.22em] text-slate-900">
+              Technical: 3 rounds
+            </div>
+            <div className="bg-[#FCB6D1] border-4 border-slate-900 p-3 font-mono text-xs font-black uppercase tracking-[0.22em] text-slate-900">
+              Non-Technical: 2 rounds
+            </div>
+          </div>
+
           {/* Neo-Brutalist Toggle Tabs */}
           <div className="flex flex-col sm:flex-row gap-6 mb-12">
             <button 
@@ -1048,14 +1098,12 @@ export default function App() {
           </div>
 
           <div className="relative">
-            {/* Vertical connector */}
             <div className="hidden md:block absolute left-[calc(2.5rem_-_2px)] top-0 bottom-0 w-1 bg-slate-900" />
 
             <StaggerContainer className="space-y-8" key={activeTrack}>
               {(activeTrack === 'tech' ? TECH_TIMELINE : NON_TECH_TIMELINE).map((phase, i) => (
                 <StaggerItem key={i}>
                   <div className="flex gap-6 md:gap-10 items-start">
-                    {/* Phase badge */}
                     <div
                       className={`shrink-0 w-20 h-20 border-4 border-slate-900 brutalist-shadow flex flex-col items-center justify-center font-mono z-10 ${phase.color}`}
                     >
@@ -1071,7 +1119,6 @@ export default function App() {
                       </span>
                     </div>
 
-                    {/* Card */}
                     <motion.div
                       className="flex-1 border-4 border-slate-900 brutalist-shadow bg-white p-6"
                       whileHover={
@@ -1111,6 +1158,111 @@ export default function App() {
         </div>
       </section>
 
+      {/* â”€â”€ RULES & REGULATIONS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section className="py-24 bg-background-light border-b-4 border-slate-900 scroll-mt-20">
+        <div className="max-w-5xl mx-auto px-6 relative z-10">
+          <ScrollReveal>
+            <div className="mb-8 flex items-center gap-4">
+              <div className="inline-block bg-[#C4DFED] text-slate-900 px-4 py-1 font-bold text-sm uppercase tracking-widest font-mono border-2 border-slate-900">
+                Rules and Regulations
+              </div>
+            </div>
+            <h2 className="text-5xl font-black uppercase text-slate-900 font-display leading-none mb-12">
+              Club Code of <span className="text-primary">Conduct</span>
+            </h2>
+          </ScrollReveal>
+
+          <div className="bg-white border-4 border-slate-900 brutalist-shadow p-8 md:p-10">
+            <ol className="space-y-4 list-decimal list-outside pl-6 text-slate-700 text-base md:text-lg font-medium leading-relaxed">
+              {RULES.map((rule, index) => (
+                <li key={index}>{rule}</li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* â”€â”€ OPEN RECRUITMENT TRACKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section id="domains" className="py-12 bg-white border-b-4 border-slate-900 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-5 relative z-10">
+          <ScrollReveal>
+            <div className="mb-6">
+              <div className="inline-block bg-[#FCB6D1] text-slate-900 px-3 py-1 font-bold mb-3 text-xs uppercase tracking-widest font-mono border-2 border-slate-900">
+                Join the Team
+              </div>
+              <h2 className="text-3xl font-black uppercase text-slate-900 font-display leading-none mb-2">
+                Who are we <span className="text-primary">looking for?</span>
+              </h2>
+              <p className="max-w-3xl text-sm text-slate-700 leading-relaxed">
+                We are looking for people who love to build, create, and learn fast. Technical roles need coding drive; creative and operational roles need creativity, initiative, and leadership.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="relative mt-4">
+            <div className="grid gap-5 lg:grid-cols-2">
+              <div className="relative lg:pt-12">
+                <div className="hidden lg:block absolute left-1/2 top-12 h-7 w-1 -translate-x-1/2 bg-slate-900" />
+                <div className="h-full rounded-none border-4 border-slate-900 bg-[#C4DFED] p-3 brutalist-shadow transition-all duration-200 hover:-translate-y-1" style={{ transform: "rotate(-0.8deg)" }}>
+                  <div className="mb-2 inline-block border-2 border-slate-900 bg-slate-900 px-2 py-1.5 font-mono text-[9px] font-black uppercase tracking-[0.2em] text-white">
+                    [ CATEGORY: TECHNICAL ]
+                  </div>
+                  <div className="mb-3 inline-block border-2 border-slate-900 bg-white px-2 py-1 font-mono text-[8px] font-black uppercase tracking-[0.22em] text-slate-900">
+                    STATUS: HIRING
+                  </div>
+
+                  <div className="space-y-2.5">
+                    {TECH_TRACK.map((role, idx) => (
+                      <div
+                        key={idx}
+                        className="group relative rounded-none border-3 border-slate-900 bg-white p-2.5 transition-all duration-200 hover:-translate-y-1 hover:translate-x-1"
+                        style={{ boxShadow: idx % 2 === 0 ? "5px 5px 0px #03045E" : "7px 7px 0px #03045E", transform: idx % 2 === 0 ? "translateX(-3px)" : "translateX(3px)" }}
+                      >
+                        <div className="absolute -right-2 -top-2 h-3.5 w-3.5 border-3 border-slate-900 bg-[#F53D8A]" />
+                        <div className="mb-1.5 inline-block border border-slate-900 bg-slate-900 px-2 py-1 font-mono text-[7px] font-black uppercase tracking-[0.2em] text-white">
+                          STATUS: HIRING
+                        </div>
+                        <h4 className="text-lg font-black uppercase font-display text-slate-900 leading-tight">{role.title}</h4>
+                        <p className="mt-1 text-[11px] font-medium leading-relaxed text-slate-700">{role.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative lg:pt-12">
+                <div className="hidden lg:block absolute left-1/2 top-12 h-7 w-1 -translate-x-1/2 bg-slate-900" />
+                <div className="h-full rounded-none border-4 border-slate-900 bg-[#FCB6D1] p-3 brutalist-shadow transition-all duration-200 hover:-translate-y-1" style={{ transform: "rotate(0.8deg)" }}>
+                  <div className="mb-2 inline-block border-2 border-slate-900 bg-slate-900 px-2 py-1.5 font-mono text-[9px] font-black uppercase tracking-[0.2em] text-white">
+                    [ CATEGORY: NON TECHNICAL ]
+                  </div>
+                  <div className="mb-3 inline-block border-2 border-slate-900 bg-white px-2 py-1 font-mono text-[8px] font-black uppercase tracking-[0.22em] text-slate-900">
+                    STATUS: HIRING
+                  </div>
+
+                  <div className="space-y-2.5">
+                    {NON_TECH_TRACK.map((role, idx) => (
+                      <div
+                        key={idx}
+                        className="group relative rounded-none border-3 border-slate-900 bg-white p-2.5 transition-all duration-200 hover:-translate-y-1 hover:translate-x-1"
+                        style={{ boxShadow: idx % 2 === 0 ? "5px 5px 0px #03045E" : "7px 7px 0px #03045E", transform: idx % 2 === 0 ? "translateX(-2px)" : "translateX(2px)" }}
+                      >
+                        <div className="absolute -right-2 -top-2 h-3.5 w-3.5 border-3 border-slate-900 bg-[#C4DFED]" />
+                        <div className="mb-1.5 inline-block border border-slate-900 bg-slate-900 px-2 py-1 font-mono text-[7px] font-black uppercase tracking-[0.2em] text-white">
+                          STATUS: HIRING
+                        </div>
+                        <h4 className="text-lg font-black uppercase font-display text-slate-900 leading-tight">{role.title}</h4>
+                        <p className="mt-1 text-[11px] font-medium leading-relaxed text-slate-800">{role.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* â”€â”€ FAQ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section
         id="faq"
@@ -1130,6 +1282,14 @@ export default function App() {
             </div>
           </ScrollReveal>
 
+          <ScrollReveal>
+            <div className="mb-8">
+              <div className="inline-block bg-white text-slate-900 px-4 py-1 font-bold text-sm uppercase tracking-widest font-mono border-2 border-slate-900">
+                Frequently Asked Questions
+              </div>
+            </div>
+          </ScrollReveal>
+
           <StaggerContainer className="space-y-4">
             {FAQS.map((faq, i) => (
               <StaggerItem key={i}>
@@ -1145,18 +1305,17 @@ export default function App() {
         <section id="register" className="bg-primary py-24 scroll-mt-20 relative">
           <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
             <div className="inline-block bg-white text-primary px-4 py-1 font-bold mb-8 text-sm uppercase tracking-widest font-mono brutalist-shadow border-2 border-slate-900">
-              Applications Open â€” Intake 2026
+              Applications Open — Intake 2026
             </div>
             <h2 className="text-6xl md:text-8xl font-black text-white mb-8 uppercase leading-none italic font-display">
-              Join The Codex.
+              Be A Part Of Us.
             </h2>
             <p className="text-2xl font-bold text-white/90 mb-12 max-w-2xl mx-auto">
-              Register for the orientation session and take the first step into a
-              decade-long legacy of technical excellence.
+              Register for the orientation session and become part of a community built on curiosity, creativity, and technical ambition.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
               <SonarButton
-                href="https://forms.gle/"
+                href="https://forms.gle/exrCRqSNMF9gfWuF9"
                 className="bg-white text-slate-900 px-12 py-6 text-xl md:text-2xl font-black border-4 border-slate-900 w-full md:w-auto font-display tracking-widest uppercase cursor-pointer inline-block text-center"
               >
                 REGISTER NOW
