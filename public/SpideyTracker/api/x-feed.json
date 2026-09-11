@@ -2,165 +2,198 @@
   "posts": [
     {
       "id": "usr-1",
-      "text": "Rohit Jain - Software Engineer @ Google\nCODEX Alumni. Expert in Agentic AI and full-stack development.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Uddalak Mukhopadhyay - Coordinator @ Dell, Bangalore\nExpert in Frontend and UI/UX. Currently at the ITER campus here now for the Aarambh event for CODEX orientation!",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Uddalak Mukhopadhyay",
+        "username": "uddalak_m",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-2",
-      "text": "John Doe - Lead Developer\nCODEX Mentor. Guiding the next generation of engineers.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Tushar Kumar - Coordinator @ ITER, Bhubaneswar\nSpecializing in CP and DSA. Currently at the ITER campus here now for the Aarambh event for CODEX orientation!",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Tushar Kumar",
+        "username": "tusharkumar",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-3",
-      "text": "Jane Smith - Frontend Recruit\nNew recruit passionate about React and modern web design.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Amlan Anshuman Nayak - Coordinator @ Dell, Bangalore\nExpert in CP and DSA. Currently at the ITER campus here now for the Aarambh event for CODEX orientation!",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Amlan Anshuman Nayak",
+        "username": "amlan_nayak",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-4",
-      "text": "Alice Brown - Sr. Data Scientist\nAlumni working on predictive models and big data architecture.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Pritish Biswas - Coordinator @ JPMorgan, Mumbai\nSpecialist in DevOps and Frontend. Currently at the ITER campus here now for the Aarambh event for CODEX orientation!",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Pritish Biswas",
+        "username": "pritishbiswas",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-5",
-      "text": "Bob White - Backend Engineer\nMentor specializing in Node.js, microservices, and databases.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Amaresh Swain - Coordinator @ Reltio, Bangalore\nPassionate about CP and DSA. Currently at the ITER campus here now for the Aarambh event for CODEX orientation!",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Amaresh Swain",
+        "username": "amaresh_swain",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-6",
-      "text": "Charlie Green - UI/UX Designer\nRecruit with an eye for stunning aesthetics and user experience.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "P Shreetam kumar - Content Lead\nBased at ITER Campus 1. Driving Technical Writing, SEO, and UI/UX.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "P Shreetam kumar",
+        "username": "shreetam_kumar",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-7",
-      "text": "David Black - CTO @ TechStartup\nAlumni who founded a successful startup in the fintech space.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Shubham Parida - Tech Lead\nBased in Bhubaneswar. Architecting the future with Backend, System Design, and Cloud Architecture.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Shubham Parida",
+        "username": "shubham_parida",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-8",
-      "text": "Eve Adams - DevOps Specialist\nMentor teaching Kubernetes, Docker, and CI/CD pipelines.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Abhishek Raj - Design Lead\nBased at ITER Hostels. Crafting experiences through UI/UX, Graphic Design, and Motion Graphics.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Abhishek Raj",
+        "username": "abhishek_raj",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-9",
-      "text": "Frank Clark - ML Enthusiast\nRecruit exploring deep learning and neural networks.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Khushi Choudhary - PR & Management Lead\nBased in Bhubaneswar. Leading Product Management and Agile/Scrum operations.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Khushi Choudhary",
+        "username": "khushi_choudhary",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-10",
-      "text": "Grace Hall - Security Researcher\nAlumni focusing on zero-day vulnerabilities and infosec.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Krishna Prasad Swain - Tech Lead\nBased at ITER, Bhubaneswar. Exploring Full-Stack, Web3, and Distributed Systems.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Krishna Prasad Swain",
+        "username": "krishna_swain",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-11",
-      "text": "Harry Jones - Cloud Architect\nMentor helping scale applications on AWS and GCP.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Sayantan Patra - Core Member\nBased in Bhubaneswar. Passionate about Mobile Dev, Flutter, and App Architecture.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Sayantan Patra",
+        "username": "sayantan_patra",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-12",
-      "text": "Ivy King - App Developer\nRecruit building cross-platform mobile apps in Flutter.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Suryakanta Pani - Core Member\nBased at ITER Campus 1. Diving deep into Machine Learning, Data Science, and Python.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Suryakanta Pani",
+        "username": "suryakanta_pani",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-13",
-      "text": "Jack Lee - Product Manager\nAlumni leading product strategy at a top tech firm.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Lipun Dani - Member\nBased in Bhubaneswar. Creating robust applications with Frontend, React, and Open Source tech.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Lipun Dani",
+        "username": "lipun_dani",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-14",
-      "text": "Kelly Moore - Fullstack Dev\nMentor with deep knowledge of Next.js and PostgreSQL.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Swagat Kumar Sahoo - Member\nBased at ITER, Bhubaneswar. Specializing in Backend, Node.js, and API Design.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Swagat Kumar Sahoo",
+        "username": "swagat_sahoo",
         "avatar_url": "./favicon.png"
       },
       "media": []
     },
     {
       "id": "usr-15",
-      "text": "Leo Perez - Blockchain Dev\nRecruit experimenting with smart contracts and Web3.",
-      "created_at": "2026-09-10 07:31:31",
+      "text": "Saurav Mishra - Alumni\nBased in Whitefield, Bangalore. Working extensively with Cloud (AWS) and Microservices.",
+      "created_at": "2026-09-11 23:52:26",
       "author": {
-        "name": "mockuser",
-        "username": "mockuser",
+        "name": "Saurav Mishra",
+        "username": "saurav_mishra",
+        "avatar_url": "./favicon.png"
+      },
+      "media": []
+    },
+    {
+      "id": "usr-16",
+      "text": "Debopam Aich - Alumni\nBased in HITEC City, Hyderabad. Securing the web through Cybersecurity and Network Architecture.",
+      "created_at": "2026-09-11 23:52:26",
+      "author": {
+        "name": "Debopam Aich",
+        "username": "debopam_aich",
+        "avatar_url": "./favicon.png"
+      },
+      "media": []
+    },
+    {
+      "id": "usr-17",
+      "text": "Adarsh Sarangi - Alumni\nBased at Bandra Kurla Complex, Mumbai. Innovating with AI/ML, NLP, and Computer Vision.",
+      "created_at": "2026-09-11 23:52:26",
+      "author": {
+        "name": "Adarsh Sarangi",
+        "username": "adarsh_sarangi",
+        "avatar_url": "./favicon.png"
+      },
+      "media": []
+    },
+    {
+      "id": "usr-18",
+      "text": "Ayush Kejariwal - Alumni\nBased in Electronic City, Bangalore. Building immersive worlds with Game Development and AR/VR.",
+      "created_at": "2026-09-11 23:52:26",
+      "author": {
+        "name": "Ayush Kejariwal",
+        "username": "ayush_kejariwal",
         "avatar_url": "./favicon.png"
       },
       "media": []
