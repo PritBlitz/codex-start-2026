@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Instagram, Linkedin, Mail } from "lucide-react";
@@ -900,7 +900,7 @@ export default function App() {
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               />
               {/* Tracker container */}
-              <div className="relative bg-[#C4DFED] border-4 border-slate-900 brutalist-shadow -rotate-2 flex flex-col overflow-hidden w-full">
+              <div className="relative bg-[#C4DFED] border-4 border-slate-900 brutalist-shadow flex flex-col overflow-hidden w-full">
                 {/* Chrome bar */}
                 <div className="flex items-center gap-2 px-4 py-3 border-b-4 border-slate-900 bg-[#C4DFED] shrink-0">
                   <span className="w-3 h-3 rounded-full bg-red-500 inline-block" />

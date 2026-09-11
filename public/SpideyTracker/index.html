@@ -496,7 +496,15 @@ const siteInit = {"general":{"seo":{"title":"CODEX Tracker","description":"Track
 .ticker-track{text-decoration:none;cursor:default}
 .ticker-track.is-share{text-decoration:underline;text-decoration-color:rgba(150,224,247,.8);text-underline-offset:3px;cursor:pointer}
 </style>
-</head> <body>
+
+<style id="fix-pin-drift">
+  /* Fix Mapbox marker drift caused by CSS transitions on the transform property */
+  #map-vector-layer .spidey-pin {
+    transition: filter 0.16s ease !important; /* Overrides the original which included transform */
+  }
+</style>
+</head>
+ <body>
 
  <!-- Google Tag Manager (noscript) --> <noscript> <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFDX4QCW" height="0" width="0" style="display:none;visibility:hidden"></iframe> </noscript> <!-- End Google Tag Manager (noscript) --> <!--?php if (USE_CUSTOM_CONSENT_MODAL): ?--> <script>
         // Keep consent dialog styling in CSS (not JS object styles).
