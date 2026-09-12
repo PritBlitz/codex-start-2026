@@ -154,7 +154,7 @@
     opts = opts || {};
     var ll = toLngLat(opts.position) || { lat: 0, lng: 0 };
     
-    var markerOpts = {};
+    var markerOpts = { anchor: 'bottom' };
     if (opts.content) {
       markerOpts.element = opts.content;
     }

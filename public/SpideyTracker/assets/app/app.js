@@ -739,32 +739,9 @@
     var pin = e.detail && e.detail.pin;
     if (!pin) return;
     setTimeout(function () {
-      injectFavBtnToCards(pin, 8);
       injectImgCountToCards(pin, 8);
     }, 300);
   });
-
-  function injectFavBtnToCards(pin, tries) {
-    var wraps = $$('.pin-card-wrap.is-visible');
-    if (!wraps.length) {
-      if (tries > 0) setTimeout(function () { injectFavBtnToCards(pin, tries - 1); }, 500);
-      return;
-    }
-    var wrap = wraps[wraps.length - 1];
-    var key = pinKey(pin);
-    if ($('[data-app-fav]', wrap)) return;
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'app-fav-btn' + (favIds[key] ? ' is-faved' : '');
-    btn.dataset.appFav = key;
-    btn.title = favIds[key] ? 'Favorited' : 'Favorite Profile';
-    btn.innerHTML = favIds[key] ? '★' : '☆';
-    btn.addEventListener('click', function (ev) {
-      ev.stopPropagation();
-      toggleFavorite(pin, btn);
-    });
-    wrap.appendChild(btn);
-  }
 
   // CODEX：CODEXpicsCODEX
   function injectImgCountToCards(pin, tries) {
@@ -814,18 +791,6 @@
           left.appendChild(badge);
         }
       }
-      var fields = $('.msg-center .content-right__fields, .base .content-right__fields, #alert-btn .content-right__fields');
-      if (!fields) return;
-      var key = pinKey(pin);
-      if ($('[data-app-fav]', fields)) return;
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'app-btn';
-      btn.dataset.appFav = key;
-      btn.style.cssText = 'margin-top:10px;font-size:12px;padding:6px 14px;';
-      btn.textContent = favIds[key] ? 'Favorited ★' : '★ Favorite Profile';
-      btn.addEventListener('click', function () { toggleFavorite(pin, btn); });
-      fields.appendChild(btn);
     }, 120);
   });
 
@@ -1206,4 +1171,65 @@
     refreshUserPins: refreshUserPins,
     getCurrentUser: function () { return currentUser; }
   };
+})();
+
+// Repurpose sound-toggle-btn to open the Community Updates sidebar
+(function () {
+  var btn = document.getElementById('sound-toggle-btn');
+  if (!btn) return;
+  btn.removeAttribute('data-action');
+  btn.setAttribute('title', 'Community Updates');
+  btn.setAttribute('aria-label', 'Open Community Updates');
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    document.dispatchEvent(new CustomEvent('app:open-x-feed'));
+  });
+})();
+
+// Aarambh — CODEX Orientation Event: purple star via existing pin engine
+(function () {
+  // Purple star SVG as a data URI for the CSS content rule
+  var purpleStarSVG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56' width='56' height='56'%3E%3Cdefs%3E%3CradialGradient id='ag' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0%25' stop-color='%23e879f9'/%3E%3Cstop offset='100%25' stop-color='%237e22ce'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpolygon points='28,4 34,20 52,20 38,31 43,48 28,38 13,48 18,31 4,20 22,20' fill='url(%23ag)' stroke='%23f0abfc' stroke-width='1.5'/%3E%3C/svg%3E";
+
+  // Inject CSS for the custom pin type once
+  if (!document.getElementById('aarambh-style')) {
+    var s = document.createElement('style');
+    s.id = 'aarambh-style';
+    s.textContent = [
+      '#map-vector-layer .pin-aarambh { content: url("' + purpleStarSVG + '"); width: 44px !important; }',
+      '@keyframes aarambh-glow {',
+      '  0%,100% { filter: drop-shadow(0 0 4px #c084fc) drop-shadow(0 0 10px #a855f7); transform: scale(1); }',
+      '  50% { filter: drop-shadow(0 0 12px #e879f9) drop-shadow(0 0 24px #c026d3); transform: scale(1.15); }',
+      '}',
+      '#map-vector-layer .pin-aarambh { animation: aarambh-glow 2s ease-in-out infinite; }'
+    ].join('\n');
+    document.head.appendChild(s);
+  }
+
+  var AARAMBH_PIN = {
+    id: 'aarambh-codex-2026',
+    pinType: 'event',
+    pinTypeOverride: 'aarambh',
+    lat: 20.24919,
+    lng: 85.80163,
+    title: 'Aarambh — The CODEX Orientation Event',
+    x_msg: 'Live orientation event at ITER Campus, Bhubaneswar. Welcome to CODEX!',
+    highlighted: false,
+    cardThumbImg: '',
+    images: [],
+    address: 'ITER Campus, Bhubaneswar'
+  };
+
+  // Dispatch via the existing event-pins-ready channel which Map2D listens to
+  function dispatchPin() {
+    document.dispatchEvent(new CustomEvent('app:event-pins-ready', {
+      detail: { pins: [AARAMBH_PIN] }
+    }));
+  }
+
+  // Map2D listens for app:event-pins-ready after app:map-2d-ready
+  document.addEventListener('app:map-2d-ready', function () {
+    // Small delay to ensure Map2D's listener is registered first
+    setTimeout(dispatchPin, 100);
+  });
 })();
