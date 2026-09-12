@@ -1321,14 +1321,14 @@ export default function App() {
                 REGISTER NOW
               </SonarButton>
               <motion.a
-                href="https://whatsapp.com/channel/0029Vb7SavAElagvuWq2i10a"
+                href="https://chat.whatsapp.com/LLXDu92vhNxFds0UghofLi"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.97 }}
                 className="bg-slate-900 text-white px-12 py-6 text-xl md:text-2xl font-black border-4 border-slate-900 w-full md:w-auto font-display tracking-widest uppercase cursor-pointer text-center"
               >
-                JOIN OUR CHANNEL
+                JOIN OUR COMMUNITY
               </motion.a>
             </div>
           </div>
